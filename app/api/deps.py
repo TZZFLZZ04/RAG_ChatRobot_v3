@@ -17,6 +17,8 @@ from app.services.conversation_service import ConversationService
 from app.services.document_service import DocumentService
 from app.services.embedding_service import EmbeddingService
 from app.services.ingestion_service import IngestionService
+from app.services.rag_evaluation_service import RagEvaluationService
+from app.services.rag_evaluation_report_service import RagEvaluationReportService
 from app.services.retrieval_service import RetrievalService
 from app.services.task_queue_service import TaskQueueService
 from app.services.user_service import UserService
@@ -61,6 +63,22 @@ def get_vector_store_service() -> VectorStoreService:
 @lru_cache
 def get_retrieval_service() -> RetrievalService:
     return RetrievalService(get_vector_store_service(), get_settings())
+
+
+@lru_cache
+def get_rag_evaluation_service() -> RagEvaluationService:
+    return RagEvaluationService(
+        get_retrieval_service(),
+        settings=get_settings(),
+    )
+
+
+@lru_cache
+def get_rag_evaluation_report_service() -> RagEvaluationReportService:
+    return RagEvaluationReportService(
+        settings=get_settings(),
+        evaluation_service=get_rag_evaluation_service(),
+    )
 
 
 @lru_cache

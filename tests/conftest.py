@@ -16,6 +16,8 @@ def reset_dependency_caches() -> None:
     deps.get_embedding_service.cache_clear()
     deps.get_vector_store_service.cache_clear()
     deps.get_retrieval_service.cache_clear()
+    deps.get_rag_evaluation_service.cache_clear()
+    deps.get_rag_evaluation_report_service.cache_clear()
     deps.get_ingestion_service.cache_clear()
     deps.get_collection_service.cache_clear()
     deps.get_conversation_service.cache_clear()

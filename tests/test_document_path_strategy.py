@@ -5,8 +5,10 @@ from io import BytesIO
 from pathlib import Path
 from types import SimpleNamespace
 
+import pytest
 from starlette.datastructures import UploadFile
 
+from app.core.exceptions import BadRequestError
 from app.core.path_utils import normalize_document_storage_path, resolve_document_storage_path
 from app.services.document_service import DocumentService
 from app.services.ingestion_service import IngestionService
@@ -67,6 +69,16 @@ class FakeVectorStoreService:
         return len(chunks)
 
 
+class TrackingUploadFile(UploadFile):
+    def __init__(self, *, filename: str, file: BytesIO) -> None:
+        super().__init__(filename=filename, file=file)
+        self.read_sizes: list[int] = []
+
+    async def read(self, size: int = -1) -> bytes:
+        self.read_sizes.append(size)
+        return await super().read(size)
+
+
 def build_settings(data_dir: Path) -> SimpleNamespace:
     raw_data_dir = data_dir / "raw"
     processed_data_dir = data_dir / "processed"
@@ -108,9 +120,10 @@ def test_upload_document_stores_relative_path_for_new_records(tmp_path: Path) ->
         task_queue_service=FakeTaskQueueService(),
         vector_store_service=FakeVectorStoreService(),
     )
+    service.upload_chunk_size = 4
+    upload = TrackingUploadFile(filename="handbook.txt", file=BytesIO(b"hello knowledge base"))
 
     async def run_upload() -> dict:
-        upload = UploadFile(filename="handbook.txt", file=BytesIO(b"hello knowledge base"))
         return await service.upload_document(upload, collection_id="collection-1", owner_id="user-1")
 
     result = asyncio.run(run_upload())
@@ -118,7 +131,36 @@ def test_upload_document_stores_relative_path_for_new_records(tmp_path: Path) ->
     assert result["file_path"].startswith("raw/")
     saved = repository.items[result["id"]]
     assert saved["file_path"].startswith("raw/")
-    assert (settings.data_dir / saved["file_path"]).exists()
+    assert (settings.data_dir / saved["file_path"]).read_bytes() == b"hello knowledge base"
+    assert upload.read_sizes == [4, 4, 4, 4, 4, 4]
+    assert upload.file.closed
+
+
+def test_upload_document_removes_partial_file_when_size_limit_is_exceeded(tmp_path: Path) -> None:
+    repository = FakeDocumentRepository()
+    settings = build_settings(tmp_path / "data")
+    settings.upload_max_bytes = 8
+    service = DocumentService(
+        settings=settings,
+        collection_service=FakeCollectionService(),
+        document_repository=repository,
+        ingestion_service=None,
+        task_queue_service=FakeTaskQueueService(),
+        vector_store_service=FakeVectorStoreService(),
+    )
+    service.upload_chunk_size = 4
+    upload = TrackingUploadFile(filename="oversized.txt", file=BytesIO(b"123456789"))
+
+    async def run_upload() -> None:
+        await service.upload_document(upload, collection_id="collection-1", owner_id="user-1")
+
+    with pytest.raises(BadRequestError) as exc_info:
+        asyncio.run(run_upload())
+
+    assert exc_info.value.code == "FILE_TOO_LARGE"
+    assert repository.items == {}
+    assert list(settings.raw_data_dir.iterdir()) == []
+    assert upload.file.closed
 
 
 def test_ingestion_service_resolves_legacy_path_but_indexes_portable_source_path(

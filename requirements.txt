@@ -19,6 +19,7 @@ langchain
 langchain-openai
 langchain-community
 langchain-text-splitters
+langsmith==0.7.37
 openai
 faiss-cpu
 pymilvus

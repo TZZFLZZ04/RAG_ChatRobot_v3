@@ -55,6 +55,8 @@ class Settings(BaseSettings):
     celery_ingestion_queue: str = "document_ingestion"
 
     data_dir: Path = Path("data")
+    eval_data_dir: Path = Path("data/evals")
+    eval_report_dir: Path = Path("data/evals/reports")
     raw_data_dir: Path = Path("data/raw")
     processed_data_dir: Path = Path("data/processed")
     faiss_index_dir: Path = Path("data/faiss_indexes")
@@ -72,6 +74,9 @@ class Settings(BaseSettings):
     rag_query_rewrite_history_messages: int = 6
     rag_query_rewrite_max_chars: int = 300
     rag_max_context_chars: int = 8000
+    rag_eval_llm_judge_model: str | None = None
+    rag_eval_llm_max_retries: int = Field(default=5, ge=0, le=20)
+    rag_eval_llm_retry_base_seconds: float = Field(default=1.0, ge=0, le=300)
 
     upload_max_bytes: int = 10 * 1024 * 1024
     allowed_upload_extensions: str = Field(default="pdf,docx,doc,txt")
@@ -95,6 +100,8 @@ class Settings(BaseSettings):
     def ensure_directories(self) -> None:
         for directory in (
             self.data_dir,
+            self.eval_data_dir,
+            self.eval_report_dir,
             self.raw_data_dir,
             self.processed_data_dir,
             self.faiss_index_dir,

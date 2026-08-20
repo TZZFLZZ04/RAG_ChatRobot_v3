@@ -3,302 +3,426 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ChatRobot_v3 RAG 工作台</title>
-    <link rel="stylesheet" href="/static/app.css" />
+    <title>ChatRobot Enterprise RAG 工作台</title>
+    <link rel="stylesheet" href="/static/app.css?v=20260811.5" />
   </head>
-  <body>
-    <div class="shell">
-      <header class="hero">
-        <div class="hero-main">
-          <p class="eyebrow">ChatRobot_v3</p>
-          <h1>ChatRobot_v3 RAG 工作台</h1>
-          <p class="hero-copy">
-            把登录、知识库、文档入库和知识问答收进同一个工作台。登录后即可在一页内完成知识库切换、批量上传、状态追踪、历史会话回看和流式问答。
-          </p>
-          <div class="hero-badges">
-            <span class="hero-badge">个人知识库隔离</span>
-            <span class="hero-badge">文档自动轮询</span>
-            <span class="hero-badge">流式回答</span>
-            <span class="hero-badge">会话历史回放</span>
-          </div>
+  <body class="workspace-page">
+    <a class="skip-link" href="#mainContent">跳到主要内容</a>
+    <div class="shell app-shell">
+      <header class="hero product-topbar">
+        <a class="brand-lockup" href="/" aria-label="ChatRobot 工作台首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M7 7.5A4.5 4.5 0 0 1 11.5 3h1A4.5 4.5 0 0 1 17 7.5v.75A3.75 3.75 0 0 1 20 12v1.5a4.5 4.5 0 0 1-4.5 4.5H15l-2.35 2.2a.95.95 0 0 1-1.3 0L9 18H8.5A4.5 4.5 0 0 1 4 13.5V12a3.75 3.75 0 0 1 3-3.75V7.5Z" />
+              <path d="M8.5 11.5h7M8.5 14.5h4.5" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong>ChatRobot_v3</strong>
+            <small>Enterprise RAG</small>
+          </span>
+        </a>
+
+        <div class="topbar-context" aria-label="当前产品环境">
+          <span class="context-path">知识运营工作台</span>
+          <span class="environment-badge"><i aria-hidden="true"></i> Production workspace</span>
         </div>
 
-        <div class="hero-side">
+        <div class="hero-side topbar-actions">
           <div id="currentUserCard" class="user-card hidden">
-            <p class="user-card-label">当前登录用户</p>
-            <p id="currentUsername" class="user-card-name">-</p>
-            <p id="currentUserEmail" class="user-card-meta">-</p>
+            <span class="user-avatar" aria-hidden="true">CR</span>
+            <span class="user-card-copy">
+              <span class="user-card-label">当前账号</span>
+              <strong id="currentUsername" class="user-card-name">-</strong>
+              <span id="currentUserEmail" class="user-card-meta">-</span>
+            </span>
           </div>
-
-          <div class="hero-stats">
-            <article class="hero-stat-card">
-              <span class="hero-stat-label">当前知识库</span>
-              <strong id="workspaceCollectionSummary" class="hero-stat-value">未选择</strong>
-            </article>
-            <article class="hero-stat-card">
-              <span class="hero-stat-label">文档 / 会话</span>
-              <strong id="workspaceDocumentSummary" class="hero-stat-value">0 / 0</strong>
-            </article>
-            <article class="hero-stat-card">
-              <span class="hero-stat-label">进行中任务</span>
-              <strong id="workspacePendingSummary" class="hero-stat-value">0</strong>
-            </article>
-            <article class="hero-stat-card">
-              <span class="hero-stat-label">历史会话</span>
-              <strong id="workspaceConversationSummary" class="hero-stat-value">0</strong>
-            </article>
-          </div>
-
           <div class="hero-actions">
-            <button id="refreshAllButton" class="ghost-button hidden" type="button">刷新工作台</button>
-            <button id="logoutButton" class="ghost-button hidden" type="button">退出登录</button>
+            <a class="ghost-button link-button" href="/evaluations">评估中心</a>
+            <button id="refreshAllButton" class="ghost-button hidden" type="button">刷新数据</button>
+            <button id="logoutButton" class="ghost-button hidden" type="button">退出</button>
           </div>
         </div>
       </header>
 
-      <section id="sessionNotice" class="session-notice hidden"></section>
+      <div id="mainContent" class="app-stage" tabindex="-1">
+        <section id="sessionNotice" class="session-notice hidden" role="status" aria-live="polite"></section>
 
-      <section id="authPanel" class="auth-shell">
-        <div class="auth-workbench">
-          <form id="loginForm" class="panel auth-panel auth-panel-compact">
-            <div class="panel-header">
+        <section id="authPanel" class="auth-shell production-auth">
+          <div class="auth-workbench">
+            <aside class="auth-product-panel" aria-labelledby="loginPageTitle">
               <div>
-                <p class="panel-kicker">Login</p>
-                <h2>登录账号</h2>
+                <p class="eyebrow">Enterprise knowledge operations</p>
+                <h1 id="loginPageTitle">让组织知识真正进入日常工作流</h1>
+                <p class="hero-copy">
+                  统一管理知识库、文档入库、检索问答与质量评估。每一次上传、索引和回答都有清晰状态与可追踪上下文。
+                </p>
               </div>
-            </div>
-            <p class="auth-intro">
-              先登录进入 ChatRobot_v3 工作台。登录后，你可以直接管理个人知识库、上传文档并开始基于私有资料的问答。
-            </p>
-            <div class="field">
-              <span>用户名或邮箱</span>
-              <input id="loginIdentifierInput" type="text" maxlength="255" placeholder="输入用户名或邮箱" />
-            </div>
-            <div class="field">
-              <span>密码</span>
-              <input id="loginPasswordInput" type="password" maxlength="128" placeholder="输入密码" />
-            </div>
-            <button class="accent-button" type="submit">登录工作台</button>
-            <div class="auth-link-row">
-              <span>还没有账号？</span>
-              <a class="text-link" href="/register">去注册</a>
-            </div>
-          </form>
-
-          <aside class="panel auth-preview-panel">
-            <div class="panel-header">
-              <div>
-                <p class="panel-kicker">Workspace</p>
-                <h2>登录后可以直接做什么</h2>
+              <div class="auth-signal-list" aria-label="平台能力">
+                <article>
+                  <span class="signal-icon" aria-hidden="true">01</span>
+                  <div><strong>知识资产隔离</strong><p>账号、知识库、文档与会话按用户边界管理。</p></div>
+                </article>
+                <article>
+                  <span class="signal-icon" aria-hidden="true">02</span>
+                  <div><strong>异步入库可观测</strong><p>从上传、排队到向量索引，处理状态持续回传。</p></div>
+                </article>
+                <article>
+                  <span class="signal-icon" aria-hidden="true">03</span>
+                  <div><strong>回答质量闭环</strong><p>对话来源与 RAG 评估报告在同一工作空间追踪。</p></div>
+                </article>
               </div>
-            </div>
-            <div class="feature-grid">
-              <article class="feature-card">
-                <strong>切换知识库</strong>
-                <p>按用户隔离管理多个知识库，支持同名库在不同账号下并行使用。</p>
-              </article>
-              <article class="feature-card">
-                <strong>批量文档入库</strong>
-                <p>支持上传队列、自动轮询、失败原因追踪、单文档重试和删除。</p>
-              </article>
-              <article class="feature-card">
-                <strong>会话历史回看</strong>
-                <p>按知识库维度查看历史会话，切换后可回放完整上下文与引用来源。</p>
-              </article>
-              <article class="feature-card">
-                <strong>流式知识问答</strong>
-                <p>支持 token 级实时渲染、来源延迟回填，以及中断当前回答。</p>
-              </article>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <main id="dashboard" class="dashboard hidden">
-        <section class="panel panel-operations">
-          <div class="panel-header workspace-header">
-            <div>
-              <p class="panel-kicker">Knowledge Hub</p>
-              <h2>知识库与文档中心</h2>
-              <p class="workspace-header-copy">把知识库切换、文档上传、入库状态和分块预览放在一个操作区，减少来回切页。</p>
-            </div>
-            <div class="panel-header-actions">
-              <span id="documentPollingStatus" class="panel-status-text">选择知识库后自动刷新</span>
-              <button id="refreshDocumentsButton" class="ghost-button" type="button">刷新文档</button>
-            </div>
-          </div>
-
-          <div class="operations-grid">
-            <div class="stack">
-              <section class="workspace-block workspace-block-emphasis">
-                <div class="subsection-header subsection-header-tight">
-                  <div>
-                    <h3>当前知识库</h3>
-                    <p class="subsection-meta">先选择知识库，再上传文档或发起问答。</p>
-                  </div>
-                </div>
-                <label class="field">
-                  <span>知识库列表</span>
-                  <select id="collectionSelect"></select>
-                </label>
-              </section>
-
-              <form id="collectionForm" class="card-form">
-                <div class="subsection-header subsection-header-tight">
-                  <div>
-                    <h3>新建知识库</h3>
-                    <p class="subsection-meta">补充用途说明，方便后续区分相近资料库。</p>
-                  </div>
-                </div>
-                <div class="field">
-                  <span>知识库名称</span>
-                  <input id="collectionNameInput" type="text" maxlength="100" placeholder="例如：销售培训资料" />
-                </div>
-                <div class="field">
-                  <span>说明</span>
-                  <textarea
-                    id="collectionDescriptionInput"
-                    rows="3"
-                    maxlength="500"
-                    placeholder="写一点用途，方便你自己或团队识别"
-                  ></textarea>
-                </div>
-                <button class="accent-button" type="submit">创建知识库</button>
-              </form>
-
-              <form id="uploadForm" class="card-form">
-                <div class="subsection-header subsection-header-tight">
-                  <div>
-                    <h3>上传并入库</h3>
-                    <p class="subsection-meta">支持批量选择文档，前端会自动排队并持续刷新状态。</p>
-                  </div>
-                </div>
-                <div class="field">
-                  <span>上传文档</span>
-                  <input id="fileInput" type="file" accept=".pdf,.doc,.docx,.txt" multiple />
-                  <small class="field-hint">建议按主题分批上传，便于后续定位失败原因与调试分块质量。</small>
-                </div>
-                <button class="accent-button" type="submit">上传并入库</button>
-              </form>
-            </div>
-
-            <div class="resource-column">
-              <section class="upload-queue-panel workspace-block">
-                <div class="subsection-header">
-                  <div>
-                    <h3>上传队列</h3>
-                    <span class="subsection-meta">实时反馈排队、处理中、失败原因和完成状态</span>
-                  </div>
-                </div>
-                <div id="uploadQueueEmptyState" class="empty-state">还没有上传任务。</div>
-                <div id="uploadQueue" class="upload-queue"></div>
-              </section>
-
-              <section class="workspace-block workspace-block-fill">
-                <div class="subsection-header">
-                  <div>
-                    <h3>文档状态</h3>
-                    <span class="subsection-meta">当前知识库的文档会在这里持续更新，可直接查看详情、重试入库或删除。</span>
-                  </div>
-                </div>
-                <div id="documentsEmptyState" class="empty-state">当前知识库还没有文档，上传后会在这里显示状态。</div>
-                <div id="documentsList" class="document-list"></div>
-              </section>
-            </div>
-          </div>
-
-          <section id="documentDetailPanel" class="detail-panel hidden">
-            <div class="subsection-header">
-              <div>
-                <h3 id="documentDetailTitle">文档详情</h3>
-                <p id="documentChunkPreviewSummary" class="subsection-meta"></p>
+              <div class="auth-trust-row">
+                <span><i class="status-dot" aria-hidden="true"></i> API ready</span>
+                <span>JWT protected</span>
+                <span>Private workspace</span>
               </div>
-              <button id="closeDocumentDetailButton" class="ghost-button" type="button">关闭</button>
-            </div>
-            <div class="detail-summary">
-              <span id="documentDetailStatus" class="status-badge">-</span>
-            </div>
-            <div id="documentDetailMeta" class="detail-meta-grid"></div>
-            <div id="documentDetailError" class="detail-alert hidden"></div>
-
-            <div class="detail-section">
-              <div class="subsection-header subsection-header-tight">
-                <h3>分块预览</h3>
-                <span class="subsection-meta">按切分顺序展示，便于排查入库质量</span>
-              </div>
-              <div id="documentChunkPreviewEmptyState" class="empty-state">选择文档后可查看分块预览。</div>
-              <div id="documentChunkPreview" class="chunk-preview-list"></div>
-            </div>
-          </section>
-        </section>
-
-        <section class="panel panel-chat">
-          <div class="panel-header">
-            <div>
-              <p class="panel-kicker">Knowledge Chat</p>
-              <h2>知识问答</h2>
-              <p class="workspace-header-copy">
-                围绕当前知识库展开会话。左侧保留历史回放，右侧放大对话正文和输入区，让问答成为工作台中心。
-              </p>
-            </div>
-            <div class="panel-header-actions">
-              <button id="stopChatButton" class="danger-button hidden" type="button">中断回答</button>
-              <button id="resetConversationButton" class="ghost-button" type="button">新会话</button>
-            </div>
-          </div>
-
-          <div class="chat-context-bar">
-            <div class="chat-context-card">
-              <span class="chat-context-label">当前问答知识库</span>
-              <strong id="chatCollectionBadge">未选择知识库</strong>
-            </div>
-            <div class="chat-context-card">
-              <span class="chat-context-label">建议提问方式</span>
-              <strong>优先问业务规则、流程、制度或文档差异</strong>
-            </div>
-          </div>
-
-          <div class="chat-layout">
-            <aside class="conversation-panel">
-              <div class="subsection-header subsection-header-tight">
-                <div>
-                  <h3>会话历史</h3>
-                  <span class="subsection-meta">切换查看当前知识库下的历史对话</span>
-                </div>
-              </div>
-              <div id="conversationListEmptyState" class="empty-state">当前知识库还没有历史会话。</div>
-              <div id="conversationList" class="conversation-list"></div>
             </aside>
 
-            <div class="chat-main">
-              <div id="chatFeed" class="chat-feed">
-                <article class="message assistant">
-                  <div class="message-role">系统</div>
-                  <div class="message-body">登录并选择知识库后，上传文档即可开始基于私有知识库的问答。</div>
+            <form id="loginForm" class="panel auth-panel auth-panel-compact">
+              <div class="panel-header auth-panel-header">
+                <div>
+                  <p class="panel-kicker">Secure sign in</p>
+                  <h2>登录工作台</h2>
+                </div>
+                <span class="secure-badge">受保护访问</span>
+              </div>
+              <p class="auth-intro">使用用户名或邮箱登录，继续管理你的知识库和历史任务。</p>
+              <label class="field" for="loginIdentifierInput">
+                <span>用户名或邮箱</span>
+                <input id="loginIdentifierInput" type="text" maxlength="255" autocomplete="username" placeholder="name@company.com" />
+              </label>
+              <label class="field" for="loginPasswordInput">
+                <span>密码</span>
+                <input id="loginPasswordInput" type="password" maxlength="128" autocomplete="current-password" placeholder="输入账号密码" />
+              </label>
+              <button class="accent-button" type="submit">进入工作台</button>
+              <div class="auth-link-row">
+                <span>还没有账号？</span>
+                <a class="text-link" href="/register">创建账号</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <main id="dashboard" class="workspace-app hidden">
+          <aside class="workspace-sidebar" aria-label="工作台主导航">
+            <div class="sidebar-heading">
+              <span class="sidebar-label">Workspace</span>
+              <strong>知识运营</strong>
+            </div>
+            <nav class="workspace-nav" aria-label="工作区视图">
+              <button id="navViewOverview" class="nav-item active" type="button" data-view="overview" aria-pressed="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" /></svg>
+                <span>概览</span>
+              </button>
+              <button id="navViewKnowledge" class="nav-item" type="button" data-view="knowledge" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5C4 5.12 7.58 4 12 4s8 1.12 8 2.5S16.42 9 12 9 4 7.88 4 6.5Z" /><path d="M4 6.5v5C4 12.88 7.58 14 12 14s8-1.12 8-2.5v-5M4 11.5v5C4 17.88 7.58 19 12 19s8-1.12 8-2.5v-5" /></svg>
+                <span>知识库</span>
+              </button>
+              <button id="navViewDocuments" class="nav-item" type="button" data-view="documents" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" /><path d="M14 3v5h5M9 12h6M9 16h6" /></svg>
+                <span>文档任务</span>
+                <span id="navDocumentsBadge" class="nav-badge hidden" aria-hidden="true">0</span>
+              </button>
+              <button id="navViewChat" class="nav-item" type="button" data-view="chat" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /><path d="M8 9h8M8 12h5" /></svg>
+                <span>AI 对话</span>
+              </button>
+              <a class="nav-item nav-item-link" href="/evaluations">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" /></svg>
+                <span>RAG 评估</span>
+                <svg class="nav-external" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </a>
+            </nav>
+            <div class="sidebar-status">
+              <span class="sidebar-status-title"><i class="status-dot" aria-hidden="true"></i> 工作区已连接</span>
+              <p>文档状态将在有任务时每 3 秒自动同步。</p>
+            </div>
+          </aside>
+
+          <div class="workspace-surface">
+            <section id="workspaceOverview" class="workspace-overview" aria-labelledby="workspaceTitle">
+              <div class="page-heading">
+                <div>
+                  <p class="eyebrow">Knowledge operations</p>
+                  <h1 id="workspaceTitle">知识工作台</h1>
+                  <p id="workspaceViewCopy">管理当前知识上下文，追踪入库任务，并在同一页面完成有来源的 AI 问答。</p>
+                </div>
+                <div class="page-heading-meta">
+                  <span>实时工作区</span>
+                  <strong>数据按账号隔离</strong>
+                </div>
+              </div>
+
+              <div id="workspaceStats" class="hero-stats hidden" aria-label="工作台概览">
+                <article class="hero-stat-card hero-stat-primary">
+                  <span class="hero-stat-label">当前知识库</span>
+                  <strong id="workspaceCollectionSummary" class="hero-stat-value">未选择</strong>
+                  <small>当前操作上下文</small>
+                </article>
+                <article class="hero-stat-card">
+                  <span class="hero-stat-label">文档 / 知识库</span>
+                  <strong id="workspaceDocumentSummary" class="hero-stat-value">0 / 0</strong>
+                  <small>已加载资源</small>
+                </article>
+                <article class="hero-stat-card">
+                  <span class="hero-stat-label">进行中任务</span>
+                  <strong id="workspacePendingSummary" class="hero-stat-value">0</strong>
+                  <small>上传与索引队列</small>
+                </article>
+                <article class="hero-stat-card">
+                  <span class="hero-stat-label">历史会话</span>
+                  <strong id="workspaceConversationSummary" class="hero-stat-value">0</strong>
+                  <small>当前知识库上下文</small>
                 </article>
               </div>
 
-              <form id="chatForm" class="chat-form">
-                <label class="field">
-                  <span>你的问题</span>
-                  <textarea
-                    id="chatInput"
-                    rows="4"
-                    maxlength="4000"
-                    placeholder="例如：员工手册里关于请假流程是怎么规定的？"
-                  ></textarea>
-                </label>
-                <div class="chat-actions">
-                  <button class="accent-button" type="submit">发送问题</button>
+              <div id="workspaceActions" class="workspace-actions hidden" aria-label="快捷操作">
+                <section class="workspace-block workspace-actions-group">
+                  <div class="subsection-header subsection-header-tight">
+                    <div><h3>快捷操作</h3><p class="subsection-meta">常用功能快速访问</p></div>
+                  </div>
+                  <div class="action-buttons-grid">
+                    <button type="button" class="action-button" data-goto-view="knowledge">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                      <span>创建知识库</span>
+                    </button>
+                    <button type="button" class="action-button" data-goto-view="documents">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      <span>文档任务</span>
+                    </button>
+                    <button type="button" id="workspaceRefreshButton" class="action-button" data-action="refresh">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14.5-4.8M20 12a8 8 0 0 1-14.5 4.8M4 8v4h4M20 16v-4h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      <span>刷新数据</span>
+                    </button>
+                    <button type="button" class="action-button" data-goto-view="chat">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      <span>开始对话</span>
+                    </button>
+                  </div>
+                </section>
+
+                <section class="workspace-block workspace-activity">
+                  <div class="subsection-header subsection-header-tight">
+                    <div><h3>最近活动</h3><p class="subsection-meta">最近上传和入库的文档</p></div>
+                    <button type="button" class="ghost-button-small" data-goto-view="documents">查看全部</button>
+                  </div>
+                  <div id="recentActivityEmptyState" class="empty-state">还没有文档活动。</div>
+                  <div id="recentActivityList" class="recent-activity-list"></div>
+                </section>
+              </div>
+            </section>
+
+            <div class="workspace-views">
+              <section class="workspace-view view-overview" data-view-panel="overview" aria-label="工作区入口">
+                <div class="entry-grid">
+                  <button class="entry-card" type="button" data-goto-view="knowledge">
+                    <span class="entry-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M4 6.5C4 5.12 7.58 4 12 4s8 1.12 8 2.5S16.42 9 12 9 4 7.88 4 6.5Z" /><path d="M4 6.5v5C4 12.88 7.58 14 12 14s8-1.12 8-2.5v-5M4 11.5v5C4 17.88 7.58 19 12 19s8-1.12 8-2.5v-5" /></svg>
+                    </span>
+                    <strong>知识库配置</strong>
+                    <p>选择工作上下文、新建知识库、提交待入库文件。</p>
+                    <span class="entry-go" aria-hidden="true">前往 →</span>
+                  </button>
+                  <button class="entry-card" type="button" data-goto-view="documents">
+                    <span class="entry-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z" /><path d="M14 3v5h5M9 12h6M9 16h6" /></svg>
+                    </span>
+                    <strong>文档任务</strong>
+                    <p>跟踪入库队列、检查分块、重试失败任务。</p>
+                    <span class="entry-go" aria-hidden="true">前往 →</span>
+                  </button>
+                  <button class="entry-card" type="button" data-goto-view="chat">
+                    <span class="entry-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" /><path d="M8 9h8M8 12h5" /></svg>
+                    </span>
+                    <strong>AI 对话</strong>
+                    <p>基于当前知识库提问，回答附带可核查来源。</p>
+                    <span class="entry-go" aria-hidden="true">前往 →</span>
+                  </button>
+                  <a class="entry-card" href="/evaluations">
+                    <span class="entry-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7" /></svg>
+                    </span>
+                    <strong>RAG 评估</strong>
+                    <p>运行数据集、比较历史报告、下钻失败 Case。</p>
+                    <span class="entry-go" aria-hidden="true">打开评估中心 →</span>
+                  </a>
                 </div>
-              </form>
+              </section>
+
+              <section id="knowledgePanel" class="panel panel-operations workspace-view" data-view-panel="knowledge">
+                <div class="panel-header workspace-header">
+                  <div>
+                    <p class="panel-kicker">Knowledge base</p>
+                    <h2>知识库配置</h2>
+                    <p class="workspace-header-copy">选择工作上下文、新建知识库并提交待入库文件。</p>
+                  </div>
+                  <div class="panel-header-actions">
+                    <span id="documentPollingStatus" class="panel-status-text" role="status" aria-live="polite">选择知识库后自动刷新</span>
+                    <button id="refreshDocumentsButton" class="ghost-button" type="button">刷新文档</button>
+                  </div>
+                </div>
+
+                <div class="operations-grid">
+                  <div class="stack knowledge-controls">
+                    <section class="workspace-block workspace-block-emphasis">
+                      <div class="subsection-header subsection-header-tight">
+                        <div><h3>工作上下文</h3><p class="subsection-meta">选择本次上传和问答使用的知识库。</p></div>
+                        <span class="context-badge">Required</span>
+                      </div>
+                      <label class="field" for="collectionSelect">
+                        <span>当前知识库</span>
+                        <select id="collectionSelect"></select>
+                      </label>
+                    </section>
+
+                    <form id="collectionForm" class="card-form compact-form">
+                      <div class="subsection-header subsection-header-tight">
+                        <div><h3>新建知识库</h3><p class="subsection-meta">为一组相关资料建立独立边界。</p></div>
+                      </div>
+                      <label class="field" for="collectionNameInput">
+                        <span>名称</span>
+                        <input id="collectionNameInput" type="text" maxlength="100" placeholder="例如：销售培训资料" />
+                      </label>
+                      <label class="field" for="collectionDescriptionInput">
+                        <span>用途说明</span>
+                        <textarea id="collectionDescriptionInput" rows="3" maxlength="500" placeholder="说明资料范围与使用场景"></textarea>
+                      </label>
+                      <button class="accent-button" type="submit">创建知识库</button>
+                    </form>
+
+                    <form id="uploadForm" class="card-form compact-form">
+                      <div class="subsection-header subsection-header-tight">
+                        <div><h3>提交文档</h3><p class="subsection-meta">文件会异步切分、向量化并写入索引。</p></div>
+                      </div>
+                      <label class="field file-field" for="fileInput">
+                        <span>选择文件</span>
+                        <input id="fileInput" type="file" accept=".pdf,.doc,.docx,.txt" multiple />
+                        <small class="field-hint">PDF、DOC、DOCX、TXT；建议按主题分批上传。</small>
+                      </label>
+                      <button class="accent-button" type="submit">上传并入库</button>
+                    </form>
+                  </div>
+                </div>
+              </section>
+
+              <section id="documentsWorkspace" class="panel panel-operations workspace-view" data-view-panel="documents">
+                <div class="panel-header workspace-header">
+                  <div>
+                    <p class="panel-kicker">Document tasks</p>
+                    <h2>文档任务</h2>
+                    <p class="workspace-header-copy">跟踪入库队列与已索引文档,检查分块或重试失败任务。</p>
+                  </div>
+                  <div class="panel-header-actions">
+                    <label class="inline-collection-switcher" for="documentsCollectionSelect">
+                      <span>知识库</span>
+                      <select id="documentsCollectionSelect"></select>
+                    </label>
+                    <span id="documentsViewContext" class="panel-status-text">未选择知识库</span>
+                    <button id="refreshDocumentsViewButton" class="ghost-button" type="button">刷新文档</button>
+                  </div>
+                </div>
+
+                <div class="documents-grid">
+                  <section class="upload-queue-panel workspace-block">
+                    <div class="subsection-header">
+                      <div><h3>处理队列</h3><span class="subsection-meta">上传、排队、处理中与失败原因</span></div>
+                      <span class="section-count-label">Live</span>
+                    </div>
+                    <div id="uploadQueueEmptyState" class="empty-state">当前没有活动任务。</div>
+                    <div id="uploadQueue" class="upload-queue"></div>
+                  </section>
+
+                  <section class="workspace-block workspace-block-fill">
+                    <div class="subsection-header">
+                      <div><h3>文档资产</h3><span class="subsection-meta">查看详情、分块、失败重试或移除文档</span></div>
+                      <span class="section-count-label">Documents</span>
+                    </div>
+                    <div id="documentsEmptyState" class="empty-state">知识库中还没有文档，提交文件后会显示在这里。</div>
+                    <div id="documentsList" class="document-list"></div>
+                  </section>
+                </div>
+
+                <section id="documentDetailPanel" class="detail-panel hidden">
+                  <div class="subsection-header">
+                    <div><h3 id="documentDetailTitle">文档详情</h3><p id="documentChunkPreviewSummary" class="subsection-meta"></p></div>
+                    <button id="closeDocumentDetailButton" class="ghost-button" type="button">关闭详情</button>
+                  </div>
+                  <div class="detail-summary"><span id="documentDetailStatus" class="status-badge">-</span></div>
+                  <div id="documentDetailMeta" class="detail-meta-grid"></div>
+                  <div id="documentDetailError" class="detail-alert hidden"></div>
+                  <div class="detail-section">
+                    <div class="subsection-header subsection-header-tight"><h3>分块预览</h3><span class="subsection-meta">按切分顺序检查索引内容</span></div>
+                    <div id="documentChunkPreviewEmptyState" class="empty-state">选择文档后可查看分块预览。</div>
+                    <div id="documentChunkPreview" class="chunk-preview-list"></div>
+                  </div>
+                </section>
+              </section>
+
+              <section id="chatPanel" class="panel panel-chat workspace-view" data-view-panel="chat">
+                <div class="panel-header">
+                  <div>
+                    <p class="panel-kicker">Grounded assistant</p>
+                    <h2>知识问答</h2>
+                    <p class="workspace-header-copy">围绕当前知识库对话，回答过程实时输出并保留来源。</p>
+                  </div>
+                  <div class="panel-header-actions">
+                    <button id="stopChatButton" class="danger-button hidden" type="button">中断回答</button>
+                    <button id="resetConversationButton" class="ghost-button" type="button">新会话</button>
+                  </div>
+                </div>
+
+                <div class="chat-context-bar">
+                  <div class="chat-context-card chat-context-primary">
+                    <span class="chat-context-label">当前检索上下文</span>
+                    <strong id="chatCollectionBadge">未选择知识库</strong>
+                  </div>
+                  <div class="chat-context-card">
+                    <span class="chat-context-label">回答策略</span>
+                    <strong>优先依据文档内容，并返回可核查来源</strong>
+                  </div>
+                </div>
+
+                <div class="chat-layout">
+                  <aside class="conversation-panel">
+                    <div class="subsection-header subsection-header-tight">
+                      <div><h3>最近会话</h3><span class="subsection-meta">当前知识库的历史上下文</span></div>
+                    </div>
+                    <div id="conversationListEmptyState" class="empty-state">当前知识库还没有历史会话。</div>
+                    <div id="conversationList" class="conversation-list"></div>
+                  </aside>
+
+                  <div class="chat-main">
+                    <div class="chat-feed-header"><span><i class="status-dot" aria-hidden="true"></i> Assistant online</span><small>回答可能生成不准确内容，请核查来源</small></div>
+                    <div id="chatFeed" class="chat-feed" role="log" aria-live="polite" aria-relevant="additions text">
+                      <article class="message assistant">
+                        <div class="message-role">系统</div>
+                        <div class="message-body">选择知识库并完成文档索引后，即可开始基于私有资料的问答。</div>
+                      </article>
+                    </div>
+
+                    <form id="chatForm" class="chat-form">
+                      <label class="field" for="chatInput">
+                        <span>输入问题</span>
+                        <textarea id="chatInput" rows="4" maxlength="4000" placeholder="例如：员工手册中，请假审批需要经过哪些步骤？"></textarea>
+                      </label>
+                      <div class="chat-actions">
+                        <span class="composer-hint">Enter 发送 · 最多 4000 字</span>
+                        <button class="accent-button" type="submit">发送问题</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
-        </section>
-      </main>
+        </main>
+      </div>
     </div>
 
-    <div id="toast" class="toast hidden"></div>
-    <script src="/static/app.js"></script>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+    <script src="/static/app.js?v=20260811.5"></script>
   </body>
 </html>

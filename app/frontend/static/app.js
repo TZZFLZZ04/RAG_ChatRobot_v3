@@ -26,6 +26,7 @@ const state = {
   documentPollTimer: null,
   documentPollInFlight: false,
   busyDocumentIds: new Set(),
+  activeView: "overview",
 };
 
 const elements = {
@@ -33,6 +34,11 @@ const elements = {
   dashboard: document.getElementById("dashboard"),
   sessionNotice: document.getElementById("sessionNotice"),
   currentUserCard: document.getElementById("currentUserCard"),
+  workspaceStats: document.getElementById("workspaceStats"),
+  workspaceActions: document.getElementById("workspaceActions"),
+  workspaceRefreshButton: document.getElementById("workspaceRefreshButton"),
+  recentActivityList: document.getElementById("recentActivityList"),
+  recentActivityEmptyState: document.getElementById("recentActivityEmptyState"),
   currentUsername: document.getElementById("currentUsername"),
   currentUserEmail: document.getElementById("currentUserEmail"),
   workspaceCollectionSummary: document.getElementById("workspaceCollectionSummary"),
@@ -44,8 +50,10 @@ const elements = {
   loginIdentifierInput: document.getElementById("loginIdentifierInput"),
   loginPasswordInput: document.getElementById("loginPasswordInput"),
   logoutButton: document.getElementById("logoutButton"),
+  refreshAllButton: document.getElementById("refreshAllButton"),
   documentPollingStatus: document.getElementById("documentPollingStatus"),
   collectionSelect: document.getElementById("collectionSelect"),
+  documentsCollectionSelect: document.getElementById("documentsCollectionSelect"),
   collectionForm: document.getElementById("collectionForm"),
   collectionNameInput: document.getElementById("collectionNameInput"),
   collectionDescriptionInput: document.getElementById("collectionDescriptionInput"),
@@ -73,19 +81,49 @@ const elements = {
   chatSubmitButton: document.querySelector("#chatForm button[type='submit']"),
   stopChatButton: document.getElementById("stopChatButton"),
   toast: document.getElementById("toast"),
-  refreshAllButton: document.getElementById("refreshAllButton"),
   refreshDocumentsButton: document.getElementById("refreshDocumentsButton"),
+  refreshDocumentsViewButton: document.getElementById("refreshDocumentsViewButton"),
   resetConversationButton: document.getElementById("resetConversationButton"),
+  workspaceViewCopy: document.getElementById("workspaceViewCopy"),
+  documentsViewContext: document.getElementById("documentsViewContext"),
+  navDocumentsBadge: document.getElementById("navDocumentsBadge"),
+  navItems: Array.from(document.querySelectorAll(".workspace-nav [data-view]")),
+  viewPanels: Array.from(document.querySelectorAll("[data-view-panel]")),
+};
+
+const viewCopy = {
+  overview: "管理当前知识上下文,追踪入库任务,并在同一页面完成有来源的 AI 问答。",
+  knowledge: "选择本次上传和问答使用的知识库,或新建一个独立的知识边界。",
+  documents: "查看入库队列与已索引文档,检查分块内容或重试失败任务。",
+  chat: "围绕当前知识库提问,回答实时输出并附带可核查来源。",
 };
 
 function showToast(message, isError = false) {
   elements.toast.textContent = message;
-  elements.toast.style.background = isError ? "rgba(143, 50, 23, 0.94)" : "rgba(31, 27, 22, 0.9)";
+  elements.toast.classList.toggle("toast-error", Boolean(isError));
   elements.toast.classList.remove("hidden");
   window.clearTimeout(showToast.timer);
   showToast.timer = window.setTimeout(() => {
     elements.toast.classList.add("hidden");
-  }, 2600);
+  }, isError ? 5200 : 2600);
+}
+
+/**
+ * Extract a user-facing error message from any API failure shape.
+ * FastAPI returns {"detail": [...]} for 422 validation; backend exceptions
+ * use {"code": "...", "message": "..."}; network failures have neither.
+ */
+function extractErrorMessage(err, fallback = "请求失败,请稍后重试。") {
+  if (err && typeof err.message === "string" && err.message) {
+    return err.message;
+  }
+  if (err && Array.isArray(err.detail) && err.detail.length > 0) {
+    return err.detail.map((d) => d.msg || JSON.stringify(d)).join("; ");
+  }
+  if (err && typeof err.detail === "string" && err.detail) {
+    return err.detail;
+  }
+  return fallback;
 }
 
 function formatBytes(value) {
@@ -184,17 +222,75 @@ function renderSessionNotice() {
     return;
   }
   elements.sessionNotice.textContent = state.sessionMessage;
+  elements.sessionNotice.className = "session-notice";
+  if (state.sessionTone === "error") {
+    elements.sessionNotice.classList.add("notice-error");
+  } else if (state.sessionTone === "warning") {
+    elements.sessionNotice.classList.add("notice-warning");
+  }
   elements.sessionNotice.classList.remove("hidden");
 }
 
-function setSessionNotice(message) {
+function setSessionNotice(message, tone = "success") {
   state.sessionMessage = message;
+  state.sessionTone = tone;
   renderSessionNotice();
 }
 
 function clearSessionNotice() {
   state.sessionMessage = "";
   renderSessionNotice();
+}
+
+/**
+ * Show exactly one workspace view. The sidebar items are real destinations,
+ * so switching swaps the visible panel rather than scrolling the page.
+ * The overview view stays visible alongside its stats, which act as shortcuts.
+ */
+function setActiveView(view, { focusPanel = false } = {}) {
+  const known = ["overview", "knowledge", "documents", "chat"];
+  const nextView = known.includes(view) ? view : "overview";
+  state.activeView = nextView;
+
+  elements.viewPanels.forEach((panel) => {
+    panel.classList.toggle("is-active", panel.dataset.viewPanel === nextView);
+  });
+
+  elements.navItems.forEach((item) => {
+    const selected = item.dataset.view === nextView;
+    item.classList.toggle("active", selected);
+    item.setAttribute("aria-pressed", selected ? "true" : "false");
+  });
+
+  if (elements.workspaceViewCopy && viewCopy[nextView]) {
+    elements.workspaceViewCopy.textContent = viewCopy[nextView];
+  }
+
+  // Deep-link support without a router: the hash records the current view so
+  // reloads and back/forward land where the user left off.
+  const hash = nextView === "overview" ? "" : `#${nextView}`;
+  if (window.location.hash !== hash) {
+    window.history.replaceState({}, document.title, `${window.location.pathname}${window.location.search}${hash}`);
+  }
+
+  if (focusPanel) {
+    const panel = elements.viewPanels.find((item) => item.dataset.viewPanel === nextView);
+    if (panel) {
+      panel.scrollIntoView({ block: "nearest" });
+    }
+  }
+}
+
+function readViewFromHash() {
+  const raw = (window.location.hash || "").replace("#", "").trim();
+  // Tolerate the old anchor ids so existing links keep working.
+  const legacy = {
+    workspaceOverview: "overview",
+    knowledgePanel: "knowledge",
+    documentsWorkspace: "documents",
+    chatPanel: "chat",
+  };
+  return legacy[raw] || raw;
 }
 
 function renderWorkspaceSummary() {
@@ -210,6 +306,96 @@ function renderWorkspaceSummary() {
   elements.chatCollectionBadge.textContent = state.selectedCollectionId
     ? `${selectedCollectionName} · ${state.documents.length} 份文档`
     : "未选择知识库";
+
+  // Surface in-flight work on the nav itself so the user does not have to open
+  // the documents view to notice that something is still indexing.
+  if (elements.navDocumentsBadge) {
+    elements.navDocumentsBadge.textContent = String(pendingDocuments);
+    elements.navDocumentsBadge.classList.toggle("hidden", pendingDocuments === 0);
+  }
+
+  if (elements.documentsViewContext) {
+    elements.documentsViewContext.textContent = state.selectedCollectionId
+      ? `${selectedCollectionName} · ${state.documents.length} 份文档`
+      : "未选择知识库";
+  }
+
+  renderRecentActivity();
+}
+
+function formatRelativeTime(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return "-";
+  }
+  const minutes = Math.floor((Date.now() - date.getTime()) / 60000);
+  if (minutes < 1) return "刚刚";
+  if (minutes < 60) return `${minutes} 分钟前`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours} 小时前`;
+  const days = Math.floor(hours / 24);
+  if (days < 7) return `${days} 天前`;
+  return formatDateTime(value);
+}
+
+/**
+ * Recent document activity for the overview view. Built with textContent like
+ * the other list renderers so filenames can never be interpreted as markup.
+ */
+function renderRecentActivity() {
+  if (!elements.recentActivityList || !elements.recentActivityEmptyState) {
+    return;
+  }
+
+  const recent = [...state.documents]
+    .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
+    .slice(0, 5);
+
+  elements.recentActivityList.innerHTML = "";
+  elements.recentActivityEmptyState.style.display = recent.length ? "none" : "block";
+
+  recent.forEach((documentItem) => {
+    const row = document.createElement("button");
+    row.type = "button";
+    row.className = "activity-item";
+
+    const content = document.createElement("div");
+    content.className = "activity-content";
+
+    const title = document.createElement("div");
+    title.className = "activity-title";
+    title.textContent = documentItem.filename;
+
+    const meta = document.createElement("div");
+    meta.className = "activity-meta";
+
+    const status = document.createElement("span");
+    status.className = badgeClass(documentItem.status);
+    status.textContent = formatStatusLabel(documentItem.status);
+
+    const chunks = document.createElement("span");
+    chunks.textContent = `${documentItem.chunk_count} chunks`;
+
+    meta.appendChild(status);
+    meta.appendChild(chunks);
+    content.appendChild(title);
+    content.appendChild(meta);
+
+    const time = document.createElement("div");
+    time.className = "activity-time";
+    time.textContent = formatRelativeTime(documentItem.updated_at);
+
+    row.appendChild(content);
+    row.appendChild(time);
+
+    // Jump straight to this document's detail in the documents view.
+    row.addEventListener("click", () => {
+      setActiveView("documents", { focusPanel: true });
+      void openDocumentDetail(documentItem.id);
+    });
+
+    elements.recentActivityList.appendChild(row);
+  });
 }
 
 function getDocumentPollingSnapshot() {
@@ -376,11 +562,14 @@ function updateUploadControls() {
 
 function renderAuthState() {
   const authenticated = Boolean(state.accessToken && state.currentUser);
+  document.body.classList.toggle("is-authenticated", authenticated);
   elements.authPanel.classList.toggle("hidden", authenticated);
   elements.dashboard.classList.toggle("hidden", !authenticated);
   elements.logoutButton.classList.toggle("hidden", !authenticated);
   elements.refreshAllButton.classList.toggle("hidden", !authenticated);
   elements.currentUserCard.classList.toggle("hidden", !authenticated);
+  elements.workspaceStats.classList.toggle("hidden", !authenticated);
+  elements.workspaceActions.classList.toggle("hidden", !authenticated);
 
   if (authenticated) {
     elements.currentUsername.textContent = state.currentUser.username;
@@ -418,7 +607,7 @@ async function assertOkResponse(response) {
   }
 
   const payload = await parseResponsePayload(response);
-  const message = typeof payload === "string" ? payload : payload.message || "请求失败";
+  const message = extractErrorMessage(payload, "请求失败");
   if (response.status === 401) {
     clearAuthentication("登录状态已失效，请重新登录后继续操作。");
   }
@@ -459,13 +648,17 @@ function stopStreamingAnswer() {
 }
 
 function renderCollectionOptions() {
-  elements.collectionSelect.innerHTML = "";
-
-  state.collections.forEach((collection) => {
-    const option = document.createElement("option");
-    option.value = collection.id;
-    option.textContent = collection.name;
-    elements.collectionSelect.appendChild(option);
+  // Knowledge view and documents view each have their own <select> pointing
+  // at the same collection, so both need the identical option list.
+  const targets = [elements.collectionSelect, elements.documentsCollectionSelect];
+  targets.forEach((select) => {
+    select.innerHTML = "";
+    state.collections.forEach((collection) => {
+      const option = document.createElement("option");
+      option.value = collection.id;
+      option.textContent = collection.name;
+      select.appendChild(option);
+    });
   });
 
   if (state.selectedCollectionId && !state.collections.some((collection) => collection.id === state.selectedCollectionId)) {
@@ -476,7 +669,9 @@ function renderCollectionOptions() {
     state.selectedCollectionId = state.collections[0].id;
   }
 
-  elements.collectionSelect.value = state.selectedCollectionId || "";
+  targets.forEach((select) => {
+    select.value = state.selectedCollectionId || "";
+  });
   updateUploadControls();
   renderWorkspaceSummary();
 }
@@ -1376,7 +1571,7 @@ async function streamChatCompletion(query, assistantMessage, signal) {
     }
 
     if (eventName === "error") {
-      streamError = new Error(payload.message || "流式输出失败");
+      streamError = new Error(extractErrorMessage(payload, "流式输出失败"));
     }
   });
 
@@ -1443,14 +1638,29 @@ elements.logoutButton.addEventListener("click", () => {
   showToast("已退出登录。");
 });
 
-elements.collectionSelect.addEventListener("change", async (event) => {
-  state.selectedCollectionId = event.target.value;
+async function switchSelectedCollection(nextCollectionId) {
+  if (nextCollectionId === state.selectedCollectionId) {
+    return;
+  }
+  state.selectedCollectionId = nextCollectionId;
   state.conversationId = null;
   clearDocumentDetail();
   resetChatFeed();
+  // Both selects (knowledge view + documents view) must reflect the same
+  // selection so switching from either place stays consistent.
+  elements.collectionSelect.value = nextCollectionId;
+  elements.documentsCollectionSelect.value = nextCollectionId;
   await loadConversations({ silent: true });
   await loadDocuments({ refreshSelectedDetail: false });
   showToast("已切换知识库，会话和文档详情已同步刷新。");
+}
+
+elements.collectionSelect.addEventListener("change", async (event) => {
+  await switchSelectedCollection(event.target.value);
+});
+
+elements.documentsCollectionSelect.addEventListener("change", async (event) => {
+  await switchSelectedCollection(event.target.value);
 });
 
 elements.collectionForm.addEventListener("submit", async (event) => {
@@ -1564,6 +1774,20 @@ elements.refreshAllButton.addEventListener("click", async () => {
   }
 });
 
+elements.workspaceRefreshButton.addEventListener("click", async () => {
+  if (!state.accessToken) {
+    showToast("请先登录。", true);
+    return;
+  }
+  try {
+    await loadCurrentUser();
+    await refreshAll();
+    showToast("个人知识库和文档状态已刷新。");
+  } catch (error) {
+    showToast(error.message, true);
+  }
+});
+
 elements.refreshDocumentsButton.addEventListener("click", async () => {
   if (!state.selectedCollectionId) {
     showToast("请先选择知识库。", true);
@@ -1609,7 +1833,50 @@ elements.closeDocumentDetailButton.addEventListener("click", () => {
   clearDocumentDetail();
 });
 
+elements.navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    setActiveView(item.dataset.view, { focusPanel: true });
+  });
+});
+
+// Overview entry cards are shortcuts into the same views as the sidebar.
+document.querySelectorAll("[data-goto-view]").forEach((card) => {
+  card.addEventListener("click", () => {
+    setActiveView(card.dataset.gotoView, { focusPanel: true });
+  });
+});
+
+// Opening a document detail is only meaningful in the documents view.
+elements.documentsList.addEventListener("click", () => {
+  if (state.activeView !== "documents") {
+    setActiveView("documents");
+  }
+});
+
+if (elements.refreshDocumentsViewButton) {
+  elements.refreshDocumentsViewButton.addEventListener("click", async () => {
+    if (!state.selectedCollectionId) {
+      showToast("请先选择知识库。", true);
+      return;
+    }
+    try {
+      await loadDocuments({ refreshSelectedDetail: Boolean(state.selectedDocumentId) });
+      showToast("文档列表已刷新。");
+    } catch (error) {
+      showToast(extractErrorMessage(error), true);
+    }
+  });
+}
+
+window.addEventListener("hashchange", () => {
+  const view = readViewFromHash();
+  if (view && view !== state.activeView) {
+    setActiveView(view);
+  }
+});
+
 async function bootstrap() {
+  setActiveView(readViewFromHash() || "overview");
   renderAuthState();
   const initialAuthNotice = readInitialAuthNotice();
   if (initialAuthNotice) {

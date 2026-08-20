@@ -38,13 +38,31 @@ async function parseResponsePayload(response) {
   return response.text();
 }
 
+/**
+ * Extract a user-facing error message from any API failure shape.
+ * FastAPI returns {"detail": [...]} for 422 validation; backend exceptions
+ * use {"code": "...", "message": "..."}; network failures have neither.
+ */
+function extractErrorMessage(err, fallback = "请求失败,请稍后重试。") {
+  if (err && typeof err.message === "string" && err.message) {
+    return err.message;
+  }
+  if (err && Array.isArray(err.detail) && err.detail.length > 0) {
+    return err.detail.map((d) => d.msg || JSON.stringify(d)).join("; ");
+  }
+  if (err && typeof err.detail === "string" && err.detail) {
+    return err.detail;
+  }
+  return fallback;
+}
+
 async function assertOkResponse(response) {
   if (response.ok) {
     return response;
   }
 
   const payload = await parseResponsePayload(response);
-  const message = typeof payload === "string" ? payload : payload.message || "请求失败";
+  const message = extractErrorMessage(payload, "请求失败");
   throw new Error(message);
 }
 

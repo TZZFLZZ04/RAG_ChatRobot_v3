@@ -16,3 +16,8 @@ def index() -> FileResponse:
 @router.get("/register", include_in_schema=False)
 def register_page() -> FileResponse:
     return FileResponse(FRONTEND_DIR / "register.html")
+
+
+@router.get("/evaluations", include_in_schema=False)
+def evaluations_page() -> FileResponse:
+    return FileResponse(FRONTEND_DIR / "evaluations.html")

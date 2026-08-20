@@ -1,0 +1,60 @@
+{
+  "dataset_name": "sample-retrieval-eval",
+  "description": "Template dataset for retrieval and answer-focused RAG evaluation.",
+  "default_collection_id": "74e59242-9371-4a64-901a-6c6f0b304d75",
+  "default_top_k": 5,
+  "default_use_hybrid_search": true,
+  "default_use_rerank": true,
+  "cases": [
+    {
+      "case_id": "academic-role-booking",
+      "query": "文档中有哪些学术论文写作角色或任务指令？",
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "relevant_chunk_ids": [
+
+      ],
+      "relevant_document_ids": [
+        "945eac88-dd7c-4ad1-91c3-4563e8f4f823"
+      ],
+      "reference_answer": "文档提供了论文选题、文献综述、研究设计、论文润色、摘要撰写、审稿回复等多类学术论文写作提示词或角色任务。",
+      "candidate_answer": "文档包含论文选题、文献综述、论文润色、结构优化、摘要撰写和审稿回复等学术论文写作相关指令。",
+      "expected_answer_contains": [
+        "学术角色",
+        "论文",
+        "文献综述",
+        "论文润色",
+        "提示词"
+      ],
+      "metadata": {
+        "owner": "academic",
+        "scenario": "booking"
+      }
+    },
+    {
+      "case_id": "academic-polishing-instructions",
+      "query": "学术润色指令有哪些",
+      "top_k": 3,
+      "use_hybrid_search": true,
+      "use_rerank": true,
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "relevant_document_ids": [
+        "945eac88-dd7c-4ad1-91c3-4563e8f4f823"
+      ],
+      "reference_answer": "学术润色指令通常包括语言润色、语法修正、表达优化、逻辑梳理和学术风格提升等内容。",
+      "candidate_answer": "学术润色指令包括语法修改、表达优化和学术化改写。",
+      "expected_answer_contains": [
+        "学术润色",
+        "语法",
+        "表达优化"
+      ],
+      "metadata": {
+        "owner": "academic",
+        "scenario": "instruction"
+      }
+    }
+  ]
+}

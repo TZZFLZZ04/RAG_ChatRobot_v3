@@ -27,6 +27,7 @@ def _utc_now() -> str:
 
 class DocumentService:
     chunk_preview_limit = 20
+    upload_chunk_size = 1024 * 1024
 
     def __init__(
         self,
@@ -64,20 +65,28 @@ class DocumentService:
                 message=f"Allowed file types: {', '.join(sorted(self.settings.allowed_extensions))}.",
             )
 
-        content = await upload.read()
-        await upload.close()
-
-        if len(content) > self.settings.upload_max_bytes:
-            raise BadRequestError(
-                code="FILE_TOO_LARGE",
-                message=f"File size exceeds {self.settings.upload_max_bytes} bytes.",
-            )
-
         document_id = str(uuid4())
         stored_name = f"{document_id}_{filename}"
         stored_relative_path = build_document_storage_path(stored_name)
         stored_path = resolve_document_storage_path(stored_relative_path, self.settings)
-        stored_path.write_bytes(content)
+        file_size = 0
+
+        try:
+            with stored_path.open("wb") as stored_file:
+                while chunk := await upload.read(self.upload_chunk_size):
+                    file_size += len(chunk)
+                    if file_size > self.settings.upload_max_bytes:
+                        raise BadRequestError(
+                            code="FILE_TOO_LARGE",
+                            message=f"File size exceeds {self.settings.upload_max_bytes} bytes.",
+                        )
+                    stored_file.write(chunk)
+        except Exception:
+            if stored_path.exists():
+                stored_path.unlink()
+            raise
+        finally:
+            await upload.close()
 
         now = _utc_now()
         record = {
@@ -87,7 +96,7 @@ class DocumentService:
             "filename": filename,
             "file_path": str(stored_relative_path),
             "file_type": suffix,
-            "file_size": len(content),
+            "file_size": file_size,
             "status": "uploaded",
             "chunk_count": 0,
             "error_message": None,

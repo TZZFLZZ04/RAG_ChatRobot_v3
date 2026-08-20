@@ -23,6 +23,8 @@ class EmbeddingService:
                 model=self.settings.openai_embedding_model,
                 api_key=self.settings.openai_api_key,
                 base_url=self.settings.openai_base_url,
+		check_embedding_ctx_length=False,
+		chunk_size=32,
             )
 
         return self._embeddings

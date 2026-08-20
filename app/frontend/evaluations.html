@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG 评估中心 | ChatRobot Enterprise RAG</title>
+    <link rel="stylesheet" href="/static/app.css?v=20260811.5" />
+  </head>
+  <body class="evaluation-page">
+    <a class="skip-link" href="#mainContent">跳到主要内容</a>
+    <div class="shell app-shell">
+      <header class="hero product-topbar">
+        <a class="brand-lockup" href="/" aria-label="ChatRobot 工作台首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 7.5A4.5 4.5 0 0 1 11.5 3h1A4.5 4.5 0 0 1 17 7.5v.75A3.75 3.75 0 0 1 20 12v1.5a4.5 4.5 0 0 1-4.5 4.5H15l-2.35 2.2a.95.95 0 0 1-1.3 0L9 18H8.5A4.5 4.5 0 0 1 4 13.5V12a3.75 3.75 0 0 1 3-3.75V7.5Z" /><path d="M8.5 11.5h7M8.5 14.5h4.5" /></svg>
+          </span>
+          <span class="brand-copy"><strong>ChatRobot_v3</strong><small>RAG Evaluation</small></span>
+        </a>
+        <div class="topbar-context"><span class="context-path">质量与评估</span><span class="environment-badge"><i aria-hidden="true"></i> Evaluation workspace</span></div>
+        <div class="hero-side topbar-actions">
+          <div id="evalCurrentUserCard" class="user-card hidden">
+            <span class="user-avatar" aria-hidden="true">QA</span>
+            <span class="user-card-copy"><span class="user-card-label">当前账号</span><strong id="evalCurrentUsername" class="user-card-name">-</strong><span id="evalCurrentUserEmail" class="user-card-meta">-</span></span>
+          </div>
+          <div class="hero-actions"><a class="ghost-button link-button" href="/">返回工作台</a><button id="evalRefreshButton" class="ghost-button hidden" type="button">刷新报告</button></div>
+        </div>
+      </header>
+
+      <div id="mainContent" class="app-stage" tabindex="-1">
+        <section id="evalSessionNotice" class="session-notice hidden" role="status" aria-live="polite"></section>
+
+        <section id="evalLoginGate" class="auth-shell production-auth hidden">
+          <div class="auth-workbench auth-workbench-gate">
+            <aside class="auth-product-panel">
+              <div><p class="eyebrow">RAG quality operations</p><h1>把检索与回答质量变成可持续追踪的工程指标</h1><p class="hero-copy">运行标准数据集、保存历史报告，并逐条定位召回、答案与 groundedness 问题。</p></div>
+              <div class="auth-trust-row"><span><i class="status-dot" aria-hidden="true"></i> 报告按账号隔离</span><span>可追溯 Case 明细</span></div>
+            </aside>
+            <div class="panel auth-panel auth-panel-compact">
+              <div class="panel-header"><div><p class="panel-kicker">Authentication required</p><h2>需要登录</h2></div><span class="secure-badge">Protected</span></div>
+              <p class="auth-intro">评估中心会读取当前账号的知识库、数据集和历史报告。</p>
+              <div class="hero-actions"><a class="accent-button link-button" href="/">返回登录页</a></div>
+            </div>
+          </div>
+        </section>
+
+        <main id="evalDashboard" class="workspace-app evaluation-app hidden">
+          <aside class="workspace-sidebar" aria-label="工作台主导航">
+            <div class="sidebar-heading"><span class="sidebar-label">Workspace</span><strong>质量运营</strong></div>
+            <nav class="workspace-nav" aria-label="工作区视图">
+              <a class="nav-item nav-item-link" href="/">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" /></svg><span>工作台</span>
+                <svg class="nav-external" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </a>
+              <a class="nav-item nav-item-link" href="/#knowledge">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5C4 5.12 7.58 4 12 4s8 1.12 8 2.5S16.42 9 12 9 4 7.88 4 6.5Z" /><path d="M4 6.5v5C4 12.88 7.58 14 12 14s8-1.12 8-2.5v-5M4 11.5v5C4 17.88 7.58 19 12 19s8-1.12 8-2.5v-5" /></svg><span>知识库</span>
+                <svg class="nav-external" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </a>
+              <a class="nav-item nav-item-link" href="/#documents">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" /><path d="M14 3v5h5M9 12h6M9 16h6" /></svg><span>文档任务</span>
+                <svg class="nav-external" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </a>
+              <span class="nav-item active" aria-current="page">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" /></svg><span>RAG 评估</span>
+              </span>
+            </nav>
+            <div class="sidebar-status"><span class="sidebar-status-title"><i class="status-dot" aria-hidden="true"></i> 评估服务可用</span><p>运行进度与 Case 结果会在任务完成后同步。</p></div>
+          </aside>
+
+          <div class="workspace-surface">
+            <section id="evaluationOverview" class="workspace-overview" aria-labelledby="evaluationTitle">
+              <div class="page-heading">
+                <div><p class="eyebrow">Quality operations</p><h1 id="evaluationTitle">RAG 评估中心</h1><p>运行基线、比较历史报告，并从指标下钻到每一个失败 Case。</p></div>
+                <div class="page-heading-meta"><span>评估模式</span><strong>数据集 + LLM Judge</strong></div>
+              </div>
+              <div id="evalHeroStats" class="hero-stats hidden" aria-label="评估概览">
+                <article class="hero-stat-card hero-stat-primary"><span class="hero-stat-label">可用数据集</span><strong id="evalDatasetCount" class="hero-stat-value">0</strong><small>当前账号范围</small></article>
+                <article class="hero-stat-card"><span class="hero-stat-label">历史报告</span><strong id="evalReportCount" class="hero-stat-value">0</strong><small>可回溯运行</small></article>
+                <article class="hero-stat-card"><span class="hero-stat-label">最近主指标</span><strong id="evalLatestPrimaryScore" class="hero-stat-value">-</strong><small>按标签层级展示</small></article>
+                <article class="hero-stat-card"><span class="hero-stat-label">最近答案分</span><strong id="evalLatestAnswerScore" class="hero-stat-value">-</strong><small>答案质量指标</small></article>
+              </div>
+            </section>
+
+            <div class="eval-dashboard">
+              <section class="panel eval-runner-panel">
+                <div class="panel-header"><div><p class="panel-kicker">Evaluation runner</p><h2>新建运行</h2><p class="workspace-header-copy">确定知识上下文、数据集与检索策略。</p></div><span class="secure-badge">Config</span></div>
+                <form id="evalRunForm" class="card-form eval-run-form">
+                  <label class="field" for="evalCollectionSelect"><span>评测知识库（必选）</span><select id="evalCollectionSelect" aria-describedby="evalCollectionHint" required disabled><option value="">正在加载当前用户的知识库...</option></select><small id="evalCollectionHint" class="field-hint">仅显示当前登录用户的知识库。</small></label>
+                  <label class="field" for="evalDatasetSelect"><span>评估数据集</span><select id="evalDatasetSelect"></select></label>
+                  <label class="field" for="evalTopKInput"><span>Top K 覆盖</span><input id="evalTopKInput" type="number" inputmode="numeric" min="1" max="50" placeholder="留空使用默认配置" /></label>
+                  <div class="eval-form-grid">
+                    <label class="field" for="evalHybridSelect"><span>混合检索</span><select id="evalHybridSelect"><option value="">默认</option><option value="true">开启</option><option value="false">关闭</option></select></label>
+                    <label class="field" for="evalRerankSelect"><span>重排</span><select id="evalRerankSelect"><option value="">默认</option><option value="true">开启</option><option value="false">关闭</option></select></label>
+                  </div>
+                  <div class="eval-form-grid">
+                    <label class="field" for="evalAnswerModeSelect"><span>答案模式</span><select id="evalAnswerModeSelect"><option value="auto">auto</option><option value="dataset">dataset</option><option value="generate">generate</option><option value="off">off</option></select></label>
+                    <label class="field" for="evalJudgeModeSelect"><span>LLM Judge</span><select id="evalJudgeModeSelect"><option value="off">off</option><option value="auto">auto</option><option value="require">require</option></select></label>
+                  </div>
+                  <label class="field eval-checkbox-row" for="evalPersistCheckbox"><input id="evalPersistCheckbox" type="checkbox" checked /><span>保存到历史报告</span></label>
+                  <button id="evalRunButton" class="accent-button" type="submit">运行评估</button>
+                  <div id="evalRunProgress" class="eval-run-progress hidden" role="status" aria-live="polite" aria-atomic="true"><div class="eval-progress-header"><strong id="evalRunProgressLabel">已完成 0/0</strong><span id="evalRunProgressStatus" class="field-hint">等待开始</span></div><progress id="evalRunProgressBar" max="1" value="0">0%</progress></div>
+                </form>
+              </section>
+
+              <section class="panel eval-history-panel">
+                <div class="panel-header"><div><p class="panel-kicker">Report history</p><h2>运行记录</h2><p class="workspace-header-copy">按时间查看已保存的基线与实验。</p></div><span class="section-count-label">Reports</span></div>
+                <div id="evalReportsEmptyState" class="empty-state">还没有历史报告，先运行一次评估。</div>
+                <div id="evalReportList" class="eval-report-list"></div>
+              </section>
+
+              <section class="panel eval-detail-panel">
+                <div class="panel-header"><div><p class="panel-kicker">Report inspector</p><h2 id="evalDetailTitle">报告详情</h2><p id="evalDetailMeta" class="workspace-header-copy">选择一份报告后查看指标与 Case。</p></div><span class="section-count-label">Inspector</span></div>
+                <div id="evalDetailEmptyState" class="empty-state detail-empty-state">从运行记录中选择一份报告查看完整明细。</div>
+                <div id="evalDetailBody" class="hidden">
+                  <div id="evalSummaryGrid" class="eval-summary-grid"></div>
+                  <div class="detail-section"><div class="subsection-header subsection-header-tight"><div><h3>逐 Case 结果</h3><span class="subsection-meta">检索、答案评分和 LLM Judge 结论</span></div></div><div id="evalCaseResults" class="eval-case-list"></div></div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="evalToast" class="toast hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+    <script src="/static/evaluations.js?v=20260820.1"></script>
+  </body>
+</html>

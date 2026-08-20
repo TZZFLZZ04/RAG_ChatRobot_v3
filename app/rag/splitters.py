@@ -6,10 +6,32 @@ from langchain_core.documents import Document
 from app.schemas.common import DocumentChunk
 
 
+RECURSIVE_TEXT_SEPARATORS: list[str] = [
+    "\r\n\r\n",
+    "\n\n",
+    "\r\n",
+    "\n",
+    "。",
+    "！",
+    "？",
+    ". ",
+    "! ",
+    "? ",
+    "；",
+    "; ",
+    "，",
+    ", ",
+    " ",
+    "",
+]
+
+
 def build_text_splitter(chunk_size: int, chunk_overlap: int) -> RecursiveCharacterTextSplitter:
     return RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
+        separators=RECURSIVE_TEXT_SEPARATORS,
+        keep_separator="end",
     )
 
 
