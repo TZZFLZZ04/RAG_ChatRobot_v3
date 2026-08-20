@@ -1,0 +1,341 @@
+{
+  "report_id": "20260513T135129132081Z-sample-retrieval-eval",
+  "report_filename": "20260513T135129132081Z-sample-retrieval-eval.json",
+  "dataset_path": "sample_retrieval_eval.json",
+  "created_at": "2026-05-13T13:51:29.132075+00:00",
+  "answer_mode": "generate",
+  "llm_judge_mode": "auto",
+  "report": {
+    "dataset_name": "sample-retrieval-eval",
+    "description": "Template dataset for retrieval and answer-focused RAG evaluation.",
+    "evaluated_at": "2026-05-13T13:51:29.131869+00:00",
+    "summary": {
+      "dataset_name": "sample-retrieval-eval",
+      "total_cases": 2,
+      "top_k": 3,
+      "primary_metrics": {
+        "case_count": 2,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "chunk_metrics": {
+        "case_count": 1,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "document_metrics": {
+        "case_count": 2,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "source_metrics": null,
+      "answer_metrics": {
+        "case_count": 2,
+        "overall_answer_score": 0.0,
+        "expected_term_recall": 0.0,
+        "query_term_coverage": 0.0,
+        "groundedness_score": 0.0,
+        "grounded_sentence_ratio": 0.0,
+        "reference_similarity": 0.0,
+        "unsupported_statement_count": 1.0
+      },
+      "llm_judge_metrics": {
+        "case_count": 2,
+        "overall_score": 0.275,
+        "groundedness_score": 0.3,
+        "relevance_score": 0.25,
+        "completeness_score": 0.3,
+        "factual_consistency_score": 0.8
+      },
+      "latency_metrics": {
+        "case_count": 2,
+        "avg_retrieval_ms": 3609.679,
+        "p50_retrieval_ms": 1075.317,
+        "p95_retrieval_ms": 6144.041,
+        "max_retrieval_ms": 6144.041,
+        "avg_answer_generation_ms": 1496.607,
+        "p50_answer_generation_ms": 1214.736,
+        "p95_answer_generation_ms": 1778.478,
+        "max_answer_generation_ms": 1778.478,
+        "avg_llm_judge_ms": 2231.102,
+        "p50_llm_judge_ms": 2139.484,
+        "p95_llm_judge_ms": 2322.72,
+        "max_llm_judge_ms": 2322.72,
+        "avg_total_ms": 7337.389,
+        "p50_total_ms": 4612.773,
+        "p95_total_ms": 10062.004,
+        "max_total_ms": 10062.004
+      },
+      "token_usage": {
+        "case_count": 2,
+        "prompt_tokens": 1351,
+        "completion_tokens": 16,
+        "total_tokens": 1367,
+        "avg_prompt_tokens": 675.5,
+        "avg_completion_tokens": 8.0,
+        "avg_total_tokens": 683.5
+      }
+    },
+    "case_results": [
+      {
+        "case_id": "academic-role-booking",
+        "query": "学术角色怎么预订？",
+        "collection_id": "74e59242-9371-4a64-901a-6c6f0b304d75",
+        "top_k": 3,
+        "relevant_chunk_ids": [
+          "replace-with-chunk-id-1"
+        ],
+        "relevant_document_ids": [
+          "replace-with-document-id-1"
+        ],
+        "expected_sources": [],
+        "retrieved": [
+          {
+            "rank": 1,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-0",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.235838,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-4",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.209241,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-1",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.161802,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          }
+        ],
+        "primary_label_level": "chunk",
+        "primary_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "document_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "source_metrics": null,
+        "answer_source": "generated",
+        "answer": "根据现有资料无法确定。",
+        "answer_metrics": {
+          "answer_present": true,
+          "expected_term_recall": 0.0,
+          "query_term_coverage": 0.0,
+          "groundedness_score": 0.0,
+          "grounded_sentence_ratio": 0.0,
+          "reference_similarity": 0.0,
+          "unsupported_statement_count": 1,
+          "evaluated_sentence_count": 1,
+          "overall_answer_score": 0.0,
+          "unsupported_statements": [
+            "根据现有资料无法确定"
+          ]
+        },
+        "llm_judge_metrics": {
+          "overall_score": 0.2,
+          "groundedness_score": 0.2,
+          "relevance_score": 0.2,
+          "completeness_score": 0.2,
+          "factual_consistency_score": 0.8,
+          "strengths": [
+            "Accurately states that the answer cannot be determined from the context.",
+            "Avoids providing incorrect or unsupported information.",
+            "Concise and clear in its response."
+          ],
+          "weaknesses": [
+            "Does not address the specific query about how to book or reserve an academic role.",
+            "Lacks any reference to the process or platform for booking academic roles.",
+            "Misses opportunity to guide or inform the user based on available context."
+          ],
+          "rationale": "The answer correctly indicates that the information is unavailable, which aligns with the lack of specific procedural details in the retrieved context. However, it fails to directly answer the user's question about how to reserve an academic role, which reduces relevance and completeness. The groundedness is low because the context discusses academic roles but does not specify booking procedures. The factual consistency is high since the answer does not contradict the context but simply omits procedural details."
+        },
+        "latency_metrics": {
+          "retrieval_ms": 6144.041,
+          "answer_generation_ms": 1778.478,
+          "llm_judge_ms": 2139.484,
+          "total_ms": 10062.004
+        },
+        "token_usage": {
+          "prompt_tokens": 619,
+          "completion_tokens": 8,
+          "total_tokens": 627
+        },
+        "notes": []
+      },
+      {
+        "case_id": "academic-polishing-instructions",
+        "query": "学术润色指令有哪些",
+        "collection_id": "74e59242-9371-4a64-901a-6c6f0b304d75",
+        "top_k": 3,
+        "relevant_chunk_ids": [],
+        "relevant_document_ids": [
+          "replace-with-document-id-2"
+        ],
+        "expected_sources": [],
+        "retrieved": [
+          {
+            "rank": 1,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-14",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.307216,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-4",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.302094,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-36",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.251491,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          }
+        ],
+        "primary_label_level": "document",
+        "primary_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": null,
+        "document_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "source_metrics": null,
+        "answer_source": "generated",
+        "answer": "根据现有资料无法确定。",
+        "answer_metrics": {
+          "answer_present": true,
+          "expected_term_recall": 0.0,
+          "query_term_coverage": 0.0,
+          "groundedness_score": 0.0,
+          "grounded_sentence_ratio": 0.0,
+          "reference_similarity": 0.0,
+          "unsupported_statement_count": 1,
+          "evaluated_sentence_count": 1,
+          "overall_answer_score": 0.0,
+          "unsupported_statements": [
+            "根据现有资料无法确定"
+          ]
+        },
+        "llm_judge_metrics": {
+          "overall_score": 0.35,
+          "groundedness_score": 0.4,
+          "relevance_score": 0.3,
+          "completeness_score": 0.4,
+          "factual_consistency_score": 0.8,
+          "strengths": [
+            "Acknowledges the existence of multiple types of academic editing instructions.",
+            "Includes specific aspects such as language, grammar, and style.",
+            "References detailed instructions related to academic editing."
+          ],
+          "weaknesses": [
+            "The answer states '无法确定', which contradicts the context that provides detailed information.",
+            "Does not directly address the query about specific instructions for academic editing.",
+            "Lacks clarity and specificity, providing a vague response."
+          ],
+          "rationale": "The answer '无法确定' is inconsistent with the retrieved context, which clearly lists various academic editing instructions. While the context supports the existence of such instructions, the answer fails to utilize this information, resulting in a low relevance and groundedness score. The factual consistency is relatively high because the context confirms the presence of multiple instructions, but the answer's vagueness diminishes overall quality. The response does not fulfill the query's intent for specific instructions, leading to a moderate completeness score."
+        },
+        "latency_metrics": {
+          "retrieval_ms": 1075.317,
+          "answer_generation_ms": 1214.736,
+          "llm_judge_ms": 2322.72,
+          "total_ms": 4612.773
+        },
+        "token_usage": {
+          "prompt_tokens": 732,
+          "completion_tokens": 8,
+          "total_tokens": 740
+        },
+        "notes": []
+      }
+    ]
+  }
+}

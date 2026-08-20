@@ -1,0 +1,270 @@
+{
+  "report_id": "20260509T145108443538Z-sample-retrieval-eval",
+  "report_filename": "20260509T145108443538Z-sample-retrieval-eval.json",
+  "dataset_path": "sample_retrieval_eval.json",
+  "created_at": "2026-05-09T14:51:08.443526+00:00",
+  "answer_mode": "generate",
+  "llm_judge_mode": "auto",
+  "report": {
+    "dataset_name": "sample-retrieval-eval",
+    "description": "Template dataset for retrieval and answer-focused RAG evaluation.",
+    "evaluated_at": "2026-05-09T14:51:08.443309+00:00",
+    "summary": {
+      "dataset_name": "sample-retrieval-eval",
+      "total_cases": 2,
+      "top_k": 5,
+      "primary_metrics": {
+        "case_count": 2,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "chunk_metrics": {
+        "case_count": 1,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "document_metrics": {
+        "case_count": 2,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "source_metrics": null,
+      "answer_metrics": {
+        "case_count": 2,
+        "overall_answer_score": 0.0,
+        "expected_term_recall": 0.0,
+        "query_term_coverage": 0.0,
+        "groundedness_score": 0.0,
+        "grounded_sentence_ratio": 0.0,
+        "reference_similarity": 0.0,
+        "unsupported_statement_count": 1.0
+      },
+      "llm_judge_metrics": {
+        "case_count": 2,
+        "overall_score": 0.2,
+        "groundedness_score": 0.0,
+        "relevance_score": 0.15,
+        "completeness_score": 0.2,
+        "factual_consistency_score": 0.2
+      },
+      "latency_metrics": {
+        "case_count": 2,
+        "avg_retrieval_ms": 2768.046,
+        "p50_retrieval_ms": 2389.481,
+        "p95_retrieval_ms": 3146.61,
+        "max_retrieval_ms": 3146.61,
+        "avg_answer_generation_ms": 1828.928,
+        "p50_answer_generation_ms": 1269.145,
+        "p95_answer_generation_ms": 2388.711,
+        "max_answer_generation_ms": 2388.711,
+        "avg_llm_judge_ms": 1974.051,
+        "p50_llm_judge_ms": 1925.206,
+        "p95_llm_judge_ms": 2022.896,
+        "max_llm_judge_ms": 2022.896,
+        "avg_total_ms": 6571.024,
+        "p50_total_ms": 5583.832,
+        "p95_total_ms": 7558.216,
+        "max_total_ms": 7558.216
+      },
+      "token_usage": {
+        "case_count": 2,
+        "prompt_tokens": 143,
+        "completion_tokens": 16,
+        "total_tokens": 159,
+        "avg_prompt_tokens": 71.5,
+        "avg_completion_tokens": 8.0,
+        "avg_total_tokens": 79.5
+      }
+    },
+    "case_results": [
+      {
+        "case_id": "leave-policy-annual-leave",
+        "query": "员工年假制度是什么？",
+        "collection_id": "replace-with-your-collection-id",
+        "top_k": 5,
+        "relevant_chunk_ids": [
+          "replace-with-chunk-id-1"
+        ],
+        "relevant_document_ids": [
+          "replace-with-document-id-1"
+        ],
+        "expected_sources": [],
+        "retrieved": [],
+        "primary_label_level": "chunk",
+        "primary_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "document_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "source_metrics": null,
+        "answer_source": "generated",
+        "answer": "根据现有资料无法确定。",
+        "answer_metrics": {
+          "answer_present": true,
+          "expected_term_recall": 0.0,
+          "query_term_coverage": 0.0,
+          "groundedness_score": 0.0,
+          "grounded_sentence_ratio": 0.0,
+          "reference_similarity": 0.0,
+          "unsupported_statement_count": 1,
+          "evaluated_sentence_count": 1,
+          "overall_answer_score": 0.0,
+          "unsupported_statements": [
+            "根据现有资料无法确定"
+          ]
+        },
+        "llm_judge_metrics": {
+          "overall_score": 0.2,
+          "groundedness_score": 0.0,
+          "relevance_score": 0.1,
+          "completeness_score": 0.2,
+          "factual_consistency_score": 0.2,
+          "strengths": [
+            "Acknowledges lack of information",
+            "Concise response"
+          ],
+          "weaknesses": [
+            "Does not provide any details about the employee annual leave system",
+            "Fails to reference the retrieved context or reference answer",
+            "Does not address the expected content about approval process or rules"
+          ],
+          "rationale": "The answer states that the information cannot be determined, which is supported by the absence of retrieved context. However, it does not attempt to provide any relevant details about the employee annual leave system, including the approval process or rules, which are expected based on the reference answer. The groundedness and relevance scores are low due to the lack of supporting information and context. Overall, the answer is minimal and does not fulfill the informational needs implied by the query."
+        },
+        "latency_metrics": {
+          "retrieval_ms": 3146.61,
+          "answer_generation_ms": 2388.711,
+          "llm_judge_ms": 2022.896,
+          "total_ms": 7558.216
+        },
+        "token_usage": {
+          "prompt_tokens": 71,
+          "completion_tokens": 8,
+          "total_tokens": 79
+        },
+        "notes": [
+          "No chunks were retrieved for this query."
+        ]
+      },
+      {
+        "case_id": "remote-work-approval",
+        "query": "远程办公需要谁审批？",
+        "collection_id": "replace-with-your-collection-id",
+        "top_k": 3,
+        "relevant_chunk_ids": [],
+        "relevant_document_ids": [
+          "replace-with-document-id-2"
+        ],
+        "expected_sources": [],
+        "retrieved": [],
+        "primary_label_level": "document",
+        "primary_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": null,
+        "document_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "source_metrics": null,
+        "answer_source": "generated",
+        "answer": "根据现有资料无法确定。",
+        "answer_metrics": {
+          "answer_present": true,
+          "expected_term_recall": 0.0,
+          "query_term_coverage": 0.0,
+          "groundedness_score": 0.0,
+          "grounded_sentence_ratio": 0.0,
+          "reference_similarity": 0.0,
+          "unsupported_statement_count": 1,
+          "evaluated_sentence_count": 1,
+          "overall_answer_score": 0.0,
+          "unsupported_statements": [
+            "根据现有资料无法确定"
+          ]
+        },
+        "llm_judge_metrics": {
+          "overall_score": 0.2,
+          "groundedness_score": 0.0,
+          "relevance_score": 0.2,
+          "completeness_score": 0.2,
+          "factual_consistency_score": 0.2,
+          "strengths": [
+            "Acknowledges the lack of specific information",
+            "Does not provide incorrect details",
+            "Concise response"
+          ],
+          "weaknesses": [
+            "Does not address the query directly",
+            "Lacks supporting context or explanation",
+            "Fails to mention the need for approval as indicated in the reference"
+          ],
+          "rationale": "The answer states that the information cannot be determined, which aligns with the absence of retrieved context. However, it does not address the key aspect of the query—who needs approval for remote work—and does not incorporate the relevant detail from the reference answer. The groundedness and relevance scores are low due to the lack of supporting context and direct response."
+        },
+        "latency_metrics": {
+          "retrieval_ms": 2389.481,
+          "answer_generation_ms": 1269.145,
+          "llm_judge_ms": 1925.206,
+          "total_ms": 5583.832
+        },
+        "token_usage": {
+          "prompt_tokens": 72,
+          "completion_tokens": 8,
+          "total_tokens": 80
+        },
+        "notes": [
+          "No chunks were retrieved for this query."
+        ]
+      }
+    ]
+  }
+}

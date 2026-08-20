@@ -1,0 +1,234 @@
+{
+  "report_id": "20260513T140256648826Z-sample-retrieval-eval",
+  "report_filename": "20260513T140256648826Z-sample-retrieval-eval.json",
+  "dataset_path": "sample_retrieval_eval.json",
+  "created_at": "2026-05-13T14:02:56.648819+00:00",
+  "answer_mode": "auto",
+  "llm_judge_mode": "auto",
+  "report": {
+    "dataset_name": "sample-retrieval-eval",
+    "description": "Template dataset for retrieval and answer-focused RAG evaluation.",
+    "evaluated_at": "2026-05-13T14:02:56.648672+00:00",
+    "summary": {
+      "dataset_name": "sample-retrieval-eval",
+      "total_cases": 2,
+      "top_k": 4,
+      "primary_metrics": {
+        "case_count": 2,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "chunk_metrics": null,
+      "document_metrics": {
+        "case_count": 2,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "source_metrics": null,
+      "answer_metrics": {
+        "case_count": 2,
+        "overall_answer_score": 0.240959,
+        "expected_term_recall": 1.0,
+        "query_term_coverage": 0.527778,
+        "groundedness_score": 0.0,
+        "grounded_sentence_ratio": 0.0,
+        "reference_similarity": 0.381818,
+        "unsupported_statement_count": 1.0
+      },
+      "llm_judge_metrics": {
+        "case_count": 2,
+        "overall_score": 0.65,
+        "groundedness_score": 0.4,
+        "relevance_score": 0.8,
+        "completeness_score": 0.5,
+        "factual_consistency_score": 0.9
+      },
+      "latency_metrics": {
+        "case_count": 2,
+        "avg_retrieval_ms": 3742.62,
+        "p50_retrieval_ms": 1192.247,
+        "p95_retrieval_ms": 6292.993,
+        "max_retrieval_ms": 6292.993,
+        "avg_answer_generation_ms": null,
+        "p50_answer_generation_ms": null,
+        "p95_answer_generation_ms": null,
+        "max_answer_generation_ms": null,
+        "avg_llm_judge_ms": 2648.657,
+        "p50_llm_judge_ms": 2605.634,
+        "p95_llm_judge_ms": 2691.679,
+        "max_llm_judge_ms": 2691.679,
+        "avg_total_ms": 6391.276,
+        "p50_total_ms": 3883.926,
+        "p95_total_ms": 8898.626,
+        "max_total_ms": 8898.626
+      },
+      "token_usage": null
+    },
+    "case_results": [
+      {
+        "case_id": "academic-role-booking",
+        "query": "学术角色怎么预订？",
+        "collection_id": "replace-with-your-collection-id",
+        "top_k": 4,
+        "relevant_chunk_ids": [],
+        "relevant_document_ids": [
+          "74e59242-9371-4a64-901a-6c6f0b304d75"
+        ],
+        "expected_sources": [],
+        "retrieved": [],
+        "primary_label_level": "document",
+        "primary_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": null,
+        "document_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "source_metrics": null,
+        "answer_source": "dataset",
+        "answer": "学术角色可以通过平台选择对应角色并提交预订申请。",
+        "answer_metrics": {
+          "answer_present": true,
+          "expected_term_recall": 1.0,
+          "query_term_coverage": 0.5,
+          "groundedness_score": 0.0,
+          "grounded_sentence_ratio": 0.0,
+          "reference_similarity": 0.290909,
+          "unsupported_statement_count": 1,
+          "evaluated_sentence_count": 1,
+          "overall_answer_score": 0.229091,
+          "unsupported_statements": [
+            "学术角色可以通过平台选择对应角色并提交预订申请"
+          ]
+        },
+        "llm_judge_metrics": {
+          "overall_score": 0.6,
+          "groundedness_score": 0.4,
+          "relevance_score": 0.8,
+          "completeness_score": 0.5,
+          "factual_consistency_score": 0.9,
+          "strengths": [
+            "Provides a clear method to select and submit a reservation",
+            "Mentions platform-based process",
+            "Concise and relevant to the query"
+          ],
+          "weaknesses": [
+            "Lacks detailed steps or specific platform information",
+            "Does not mention confirmation process explicitly",
+            "No reference to the official procedures or guidelines"
+          ],
+          "rationale": "The answer addresses the core idea of reserving an academic role by mentioning selection and submission, aligning with the reference answer. However, it lacks detail and context, and there is no retrieved information to fully support the process described. The relevance is high, but the completeness and groundedness are moderate due to missing specifics."
+        },
+        "latency_metrics": {
+          "retrieval_ms": 6292.993,
+          "answer_generation_ms": null,
+          "llm_judge_ms": 2605.634,
+          "total_ms": 8898.626
+        },
+        "token_usage": null,
+        "notes": [
+          "No chunks were retrieved for this query."
+        ]
+      },
+      {
+        "case_id": "academic-polishing-instructions",
+        "query": "学术润色指令有哪些",
+        "collection_id": "replace-with-your-collection-id",
+        "top_k": 4,
+        "relevant_chunk_ids": [],
+        "relevant_document_ids": [
+          "74e59242-9371-4a64-901a-6c6f0b304d75"
+        ],
+        "expected_sources": [],
+        "retrieved": [],
+        "primary_label_level": "document",
+        "primary_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": null,
+        "document_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "source_metrics": null,
+        "answer_source": "dataset",
+        "answer": "学术润色指令包括语法修改、表达优化和学术化改写。",
+        "answer_metrics": {
+          "answer_present": true,
+          "expected_term_recall": 1.0,
+          "query_term_coverage": 0.555556,
+          "groundedness_score": 0.0,
+          "grounded_sentence_ratio": 0.0,
+          "reference_similarity": 0.472727,
+          "unsupported_statement_count": 1,
+          "evaluated_sentence_count": 1,
+          "overall_answer_score": 0.252828,
+          "unsupported_statements": [
+            "学术润色指令包括语法修改、表达优化和学术化改写"
+          ]
+        },
+        "llm_judge_metrics": {
+          "overall_score": 0.7,
+          "groundedness_score": 0.4,
+          "relevance_score": 0.8,
+          "completeness_score": 0.5,
+          "factual_consistency_score": 0.9,
+          "strengths": [
+            "Answer correctly mentions '语法' and '表达优化'.",
+            "Answer is relevant to the query."
+          ],
+          "weaknesses": [
+            "Answer omits other common academic editing instructions like '逻辑梳理' and '学术风格提升'.",
+            "Lacks detail and comprehensiveness compared to reference answer."
+          ],
+          "rationale": "The answer addresses some key components of academic editing instructions but is incomplete and lacks the breadth of the reference. It is relevant and factually consistent with the context but does not fully cover the typical instructions involved."
+        },
+        "latency_metrics": {
+          "retrieval_ms": 1192.247,
+          "answer_generation_ms": null,
+          "llm_judge_ms": 2691.679,
+          "total_ms": 3883.926
+        },
+        "token_usage": null,
+        "notes": [
+          "No chunks were retrieved for this query."
+        ]
+      }
+    ]
+  }
+}

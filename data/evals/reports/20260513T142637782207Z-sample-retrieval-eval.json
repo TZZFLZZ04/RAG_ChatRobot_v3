@@ -1,0 +1,386 @@
+{
+  "report_id": "20260513T142637782207Z-sample-retrieval-eval",
+  "report_filename": "20260513T142637782207Z-sample-retrieval-eval.json",
+  "dataset_path": "sample_retrieval_eval.json",
+  "created_at": "2026-05-13T14:26:37.782195+00:00",
+  "answer_mode": "generate",
+  "llm_judge_mode": "require",
+  "report": {
+    "dataset_name": "sample-retrieval-eval",
+    "description": "Template dataset for retrieval and answer-focused RAG evaluation.",
+    "evaluated_at": "2026-05-13T14:26:37.781846+00:00",
+    "summary": {
+      "dataset_name": "sample-retrieval-eval",
+      "total_cases": 2,
+      "top_k": 5,
+      "primary_metrics": {
+        "case_count": 2,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mrr_at_k": 1.0,
+        "average_precision_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "chunk_metrics": null,
+      "document_metrics": {
+        "case_count": 2,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mrr_at_k": 1.0,
+        "average_precision_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "source_metrics": {
+        "case_count": 2,
+        "source_match": 1.0,
+        "source_hit_rate": 1.0
+      },
+      "answer_metrics": {
+        "case_count": 2,
+        "overall_answer_score": 0.304853,
+        "expected_term_recall": 0.2,
+        "query_term_coverage": 0.368421,
+        "groundedness_score": 0.29665,
+        "grounded_sentence_ratio": 0.5,
+        "reference_similarity": 0.04518,
+        "unsupported_statement_count": 0.5
+      },
+      "llm_judge_metrics": {
+        "case_count": 2,
+        "overall_score": 0.425,
+        "groundedness_score": 0.65,
+        "relevance_score": 0.55,
+        "completeness_score": 0.45,
+        "factual_consistency_score": 0.8
+      },
+      "latency_metrics": {
+        "case_count": 2,
+        "avg_retrieval_ms": 5276.062,
+        "p50_retrieval_ms": 4054.216,
+        "p95_retrieval_ms": 6497.909,
+        "max_retrieval_ms": 6497.909,
+        "avg_answer_generation_ms": 2464.793,
+        "p50_answer_generation_ms": 1017.071,
+        "p95_answer_generation_ms": 3912.515,
+        "max_answer_generation_ms": 3912.515,
+        "avg_llm_judge_ms": 2244.833,
+        "p50_llm_judge_ms": 2229.812,
+        "p95_llm_judge_ms": 2259.855,
+        "max_llm_judge_ms": 2259.855,
+        "avg_total_ms": 9985.689,
+        "p50_total_ms": 7331.141,
+        "p95_total_ms": 12640.236,
+        "max_total_ms": 12640.236
+      },
+      "token_usage": {
+        "case_count": 2,
+        "prompt_tokens": 2091,
+        "completion_tokens": 308,
+        "total_tokens": 2399,
+        "avg_prompt_tokens": 1045.5,
+        "avg_completion_tokens": 154.0,
+        "avg_total_tokens": 1199.5
+      }
+    },
+    "case_results": [
+      {
+        "case_id": "academic-role-booking",
+        "query": "文档中有哪些学术论文写作角色或任务指令？",
+        "collection_id": "74e59242-9371-4a64-901a-6c6f0b304d75",
+        "top_k": 5,
+        "relevant_chunk_ids": [],
+        "relevant_document_ids": [
+          "945eac88-dd7c-4ad1-91c3-4563e8f4f823"
+        ],
+        "expected_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "retrieved": [
+          {
+            "rank": 1,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-18",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.198487,
+            "retrieval_channels": [
+              "keyword"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-0",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.193244,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-69",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.185322,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-17",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.176851,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-65",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.171332,
+            "retrieval_channels": [
+              "keyword"
+            ]
+          }
+        ],
+        "primary_label_level": "document",
+        "primary_metrics": {
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "average_precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "relevant_retrieved_count": 1,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": null,
+        "document_metrics": {
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "average_precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "relevant_retrieved_count": 1,
+          "relevant_total_count": 1
+        },
+        "source_metrics": {
+          "source_match": 1.0,
+          "source_hit_rate": 1.0,
+          "matched_sources": [
+            "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+          ],
+          "expected_source_count": 1
+        },
+        "answer_source": "generated",
+        "answer": "文档中提到的学术论文写作角色或任务指令包括：\n\n1. 角色预设：在润色、语法检查或降重等任务前，先进行角色预设，给定一个身份（如学术角色、论文导师、学术摘要专家等），以提高提问结果的质量和准确性。\n2. 学术角色：扮演具有丰富学术经验和专业知识的学术领导者，擅长遵循学术写作标准，满足论文的格式和要求。\n3. 术语表生成：根据论文内容，扮演导师角色，生成适合学习的术语表，包括术语、定义和在论文中的标题索引。\n4. 文献摘要：作为“学术摘要专家”，为提交的论文提供详细的摘要和分析，重点突出论文核心要点。\n5. 中文润色：只提供修改后的文本版本，提升拼写、语法、清晰度、简洁性和整体可读性，无需额外解释。\n6. 实验验证描述：描述验证方法的实验设计、数据和结果，引用关键数据。\n7. 未来研究方向：结合领域的当前理解，提出未来值得探索的问题、挑战及潜在的技术和投资机会。\n8. 论文不足批判：从批判角度指出论文存在的不足和需要进一步验证的问题。",
+        "answer_metrics": {
+          "answer_present": true,
+          "expected_term_recall": 0.4,
+          "query_term_coverage": 0.736842,
+          "groundedness_score": 0.519998,
+          "grounded_sentence_ratio": 1.0,
+          "reference_similarity": 0.090361,
+          "unsupported_statement_count": 0,
+          "evaluated_sentence_count": 9,
+          "overall_answer_score": 0.57672,
+          "unsupported_statements": []
+        },
+        "llm_judge_metrics": {
+          "overall_score": 0.65,
+          "groundedness_score": 0.9,
+          "relevance_score": 0.8,
+          "completeness_score": 0.7,
+          "factual_consistency_score": 0.8,
+          "strengths": [
+            "Answer accurately identifies multiple roles and tasks related to academic paper writing.",
+            "Content is well-supported by the retrieved context, especially the sections on roles and tasks.",
+            "Includes detailed descriptions aligning with the query about roles and instructions."
+          ],
+          "weaknesses": [
+            "Does not explicitly mention or organize the roles and tasks as a list or categories, which could improve clarity.",
+            "Lacks mention of specific prompts or keywords such as '提示词' explicitly, which are part of the expected answer.",
+            "The answer could better connect the roles to the broader context of academic writing prompts and instructions."
+          ],
+          "rationale": "The answer comprehensively covers various roles and tasks related to academic paper writing, supported by the retrieved context. It aligns with the query and references multiple specific instructions and roles found in the context. However, it could improve in clarity and explicit connection to the prompt keywords, and it does not explicitly mention all expected elements like '提示词'. Overall, it is relevant and grounded but slightly lacking in completeness and explicit organization."
+        },
+        "latency_metrics": {
+          "retrieval_ms": 6497.909,
+          "answer_generation_ms": 3912.515,
+          "llm_judge_ms": 2229.812,
+          "total_ms": 12640.236
+        },
+        "token_usage": {
+          "prompt_tokens": 1064,
+          "completion_tokens": 300,
+          "total_tokens": 1364
+        },
+        "notes": []
+      },
+      {
+        "case_id": "academic-polishing-instructions",
+        "query": "学术润色指令有哪些",
+        "collection_id": "74e59242-9371-4a64-901a-6c6f0b304d75",
+        "top_k": 5,
+        "relevant_chunk_ids": [],
+        "relevant_document_ids": [
+          "945eac88-dd7c-4ad1-91c3-4563e8f4f823"
+        ],
+        "expected_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "retrieved": [
+          {
+            "rank": 1,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-14",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.307216,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-4",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.302094,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-36",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.251491,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-65",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.231944,
+            "retrieval_channels": [
+              "keyword"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-12",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.220836,
+            "retrieval_channels": [
+              "keyword"
+            ]
+          }
+        ],
+        "primary_label_level": "document",
+        "primary_metrics": {
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "average_precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "relevant_retrieved_count": 1,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": null,
+        "document_metrics": {
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "average_precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "relevant_retrieved_count": 1,
+          "relevant_total_count": 1
+        },
+        "source_metrics": {
+          "source_match": 1.0,
+          "source_hit_rate": 1.0,
+          "matched_sources": [
+            "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+          ],
+          "expected_source_count": 1
+        },
+        "answer_source": "generated",
+        "answer": "根据现有资料无法确定。",
+        "answer_metrics": {
+          "answer_present": true,
+          "expected_term_recall": 0.0,
+          "query_term_coverage": 0.0,
+          "groundedness_score": 0.073302,
+          "grounded_sentence_ratio": 0.0,
+          "reference_similarity": 0.0,
+          "unsupported_statement_count": 1,
+          "evaluated_sentence_count": 1,
+          "overall_answer_score": 0.032986,
+          "unsupported_statements": [
+            "根据现有资料无法确定"
+          ]
+        },
+        "llm_judge_metrics": {
+          "overall_score": 0.2,
+          "groundedness_score": 0.4,
+          "relevance_score": 0.3,
+          "completeness_score": 0.2,
+          "factual_consistency_score": 0.8,
+          "strengths": [
+            "Accurately states that the answer is not determinable based on the provided context.",
+            "Factual consistency with the context, which describes various academic editing instructions.",
+            "Acknowledges the lack of specific details in the answer."
+          ],
+          "weaknesses": [
+            "Does not attempt to extract or summarize any specific instructions related to academic editing from the context.",
+            "Fails to address the key elements of the query, such as types of academic editing instructions.",
+            "Provides a vague response that does not add value or guidance."
+          ],
+          "rationale": "The answer simply states that the information cannot be determined, which is supported by the context that lists multiple types of academic editing instructions. However, it does not attempt to synthesize or identify specific instructions, missing an opportunity to be more relevant and complete. The groundedness and factual consistency are high because the answer aligns with the context, but the relevance and completeness are low due to the lack of substantive content."
+        },
+        "latency_metrics": {
+          "retrieval_ms": 4054.216,
+          "answer_generation_ms": 1017.071,
+          "llm_judge_ms": 2259.855,
+          "total_ms": 7331.141
+        },
+        "token_usage": {
+          "prompt_tokens": 1027,
+          "completion_tokens": 8,
+          "total_tokens": 1035
+        },
+        "notes": []
+      }
+    ]
+  }
+}

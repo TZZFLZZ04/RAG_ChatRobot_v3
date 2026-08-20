@@ -1,0 +1,214 @@
+{
+  "report_id": "20260509T144751459813Z-sample-retrieval-eval",
+  "report_filename": "20260509T144751459813Z-sample-retrieval-eval.json",
+  "dataset_path": "sample_retrieval_eval.json",
+  "created_at": "2026-05-09T14:47:51.459796+00:00",
+  "answer_mode": "dataset",
+  "llm_judge_mode": "off",
+  "report": {
+    "dataset_name": "sample-retrieval-eval",
+    "description": "Template dataset for retrieval and answer-focused RAG evaluation.",
+    "evaluated_at": "2026-05-09T14:47:51.459628+00:00",
+    "summary": {
+      "dataset_name": "sample-retrieval-eval",
+      "total_cases": 2,
+      "top_k": 5,
+      "primary_metrics": {
+        "case_count": 2,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "chunk_metrics": {
+        "case_count": 1,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "document_metrics": {
+        "case_count": 2,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "source_metrics": null,
+      "answer_metrics": {
+        "case_count": 2,
+        "overall_answer_score": 0.265973,
+        "expected_term_recall": 1.0,
+        "query_term_coverage": 0.611112,
+        "groundedness_score": 0.0,
+        "grounded_sentence_ratio": 0.0,
+        "reference_similarity": 0.548611,
+        "unsupported_statement_count": 1.0
+      },
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "case_count": 2,
+        "avg_retrieval_ms": 13939.815,
+        "p50_retrieval_ms": 1398.801,
+        "p95_retrieval_ms": 26480.828,
+        "max_retrieval_ms": 26480.828,
+        "avg_answer_generation_ms": null,
+        "p50_answer_generation_ms": null,
+        "p95_answer_generation_ms": null,
+        "max_answer_generation_ms": null,
+        "avg_llm_judge_ms": null,
+        "p50_llm_judge_ms": null,
+        "p95_llm_judge_ms": null,
+        "max_llm_judge_ms": null,
+        "avg_total_ms": 13939.815,
+        "p50_total_ms": 1398.801,
+        "p95_total_ms": 26480.828,
+        "max_total_ms": 26480.828
+      },
+      "token_usage": null
+    },
+    "case_results": [
+      {
+        "case_id": "leave-policy-annual-leave",
+        "query": "员工年假制度是什么？",
+        "collection_id": "replace-with-your-collection-id",
+        "top_k": 5,
+        "relevant_chunk_ids": [
+          "replace-with-chunk-id-1"
+        ],
+        "relevant_document_ids": [
+          "replace-with-document-id-1"
+        ],
+        "expected_sources": [],
+        "retrieved": [],
+        "primary_label_level": "chunk",
+        "primary_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "document_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "source_metrics": null,
+        "answer_source": "dataset",
+        "answer": "员工年假制度包含年假规则和审批流程。",
+        "answer_metrics": {
+          "answer_present": true,
+          "expected_term_recall": 1.0,
+          "query_term_coverage": 0.555556,
+          "groundedness_score": 0.0,
+          "grounded_sentence_ratio": 0.0,
+          "reference_similarity": 0.722222,
+          "unsupported_statement_count": 1,
+          "evaluated_sentence_count": 1,
+          "overall_answer_score": 0.277778,
+          "unsupported_statements": [
+            "员工年假制度包含年假规则和审批流程"
+          ]
+        },
+        "llm_judge_metrics": null,
+        "latency_metrics": {
+          "retrieval_ms": 26480.828,
+          "answer_generation_ms": null,
+          "llm_judge_ms": null,
+          "total_ms": 26480.828
+        },
+        "token_usage": null,
+        "notes": [
+          "No chunks were retrieved for this query."
+        ]
+      },
+      {
+        "case_id": "remote-work-approval",
+        "query": "远程办公需要谁审批？",
+        "collection_id": "replace-with-your-collection-id",
+        "top_k": 3,
+        "relevant_chunk_ids": [],
+        "relevant_document_ids": [
+          "replace-with-document-id-2"
+        ],
+        "expected_sources": [],
+        "retrieved": [],
+        "primary_label_level": "document",
+        "primary_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": null,
+        "document_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "source_metrics": null,
+        "answer_source": "dataset",
+        "answer": "远程办公需要先发起申请并获得审批。",
+        "answer_metrics": {
+          "answer_present": true,
+          "expected_term_recall": 1.0,
+          "query_term_coverage": 0.666667,
+          "groundedness_score": 0.0,
+          "grounded_sentence_ratio": 0.0,
+          "reference_similarity": 0.375,
+          "unsupported_statement_count": 1,
+          "evaluated_sentence_count": 1,
+          "overall_answer_score": 0.254167,
+          "unsupported_statements": [
+            "远程办公需要先发起申请并获得审批"
+          ]
+        },
+        "llm_judge_metrics": null,
+        "latency_metrics": {
+          "retrieval_ms": 1398.801,
+          "answer_generation_ms": null,
+          "llm_judge_ms": null,
+          "total_ms": 1398.801
+        },
+        "token_usage": null,
+        "notes": [
+          "No chunks were retrieved for this query."
+        ]
+      }
+    ]
+  }
+}

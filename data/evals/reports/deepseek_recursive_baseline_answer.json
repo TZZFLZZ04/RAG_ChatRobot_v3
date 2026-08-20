@@ -1,0 +1,3834 @@
+{
+  "report_id": "deepseek_recursive_baseline_answer",
+  "report_filename": "deepseek_recursive_baseline_answer.json",
+  "dataset_path": "deepseek_academic_prompts_eval.json",
+  "created_at": "2026-08-11T02:38:47.099856+00:00",
+  "answer_mode": "generate",
+  "llm_judge_mode": "auto",
+  "report": {
+  "dataset_name": "deepseek-academic-prompts-eval",
+  "description": "基于《50个顶级的DeepSeek学术论文指令，强烈建议收藏！》整理的检索与回答评测集。以来源文件名为稳定标签，运行时通过 --collection-id 指定实际集合。",
+  "evaluated_at": "2026-08-11T02:38:47.091272+00:00",
+  "summary": {
+    "dataset_name": "deepseek-academic-prompts-eval",
+    "total_cases": 31,
+    "top_k": 5,
+    "primary_metrics": {
+      "case_count": 31,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "hit_rate_at_k": 0.0,
+      "mrr_at_k": 0.0,
+      "average_precision_at_k": 0.0,
+      "ndcg_at_k": 0.0
+    },
+    "chunk_metrics": null,
+    "document_metrics": null,
+    "source_metrics": {
+      "case_count": 31,
+      "source_match": 1.0,
+      "source_hit_rate": 1.0
+    },
+    "answer_metrics": {
+      "case_count": 15,
+      "overall_answer_score": 0.578243,
+      "expected_term_recall": 0.631905,
+      "query_term_coverage": 0.667663,
+      "groundedness_score": 0.548487,
+      "grounded_sentence_ratio": 0.743929,
+      "reference_similarity": 0.210866,
+      "unsupported_statement_count": 1.133333
+    },
+    "llm_judge_metrics": {
+      "case_count": 15,
+      "overall_score": 0.916667,
+      "groundedness_score": 0.986667,
+      "relevance_score": 0.946667,
+      "completeness_score": 0.853333,
+      "factual_consistency_score": 0.973333
+    },
+    "latency_metrics": {
+      "case_count": 31,
+      "avg_retrieval_ms": 2373.786,
+      "p50_retrieval_ms": 1879.673,
+      "p95_retrieval_ms": 5926.467,
+      "max_retrieval_ms": 7659.718,
+      "avg_answer_generation_ms": 1275.577,
+      "p50_answer_generation_ms": 1261.664,
+      "p95_answer_generation_ms": 2204.436,
+      "max_answer_generation_ms": 2204.436,
+      "avg_llm_judge_ms": 1781.816,
+      "p50_llm_judge_ms": 1714.742,
+      "p95_llm_judge_ms": 2803.789,
+      "max_llm_judge_ms": 2803.789,
+      "avg_total_ms": 3853.17,
+      "p50_total_ms": 3689.563,
+      "p95_total_ms": 9276.498,
+      "max_total_ms": 11225.018
+    },
+    "token_usage": {
+      "case_count": 15,
+      "prompt_tokens": 17179,
+      "completion_tokens": 1768,
+      "total_tokens": 18947,
+      "avg_prompt_tokens": 1145.267,
+      "avg_completion_tokens": 117.867,
+      "avg_total_tokens": 1263.133
+    }
+  },
+  "case_results": [
+    {
+      "case_id": "role-preset-purpose",
+      "query": "文档为什么建议在润色、语法检查或降重前先进行角色预设？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-0",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.234002,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-21",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.109183,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-4",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.108592,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-45",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.098947,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-25",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.095467,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据给定上下文，文档建议在润色、语法检查或降重前先进行角色预设的原因是：**提前预设好 DeepSeek 角色，会让接下来的提问结果质量更高，语法更具准确性。**",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.666667,
+        "query_term_coverage": 0.8,
+        "groundedness_score": 0.305565,
+        "grounded_sentence_ratio": 0.5,
+        "reference_similarity": 0.092593,
+        "unsupported_statement_count": 1,
+        "evaluated_sentence_count": 2,
+        "overall_answer_score": 0.426763,
+        "unsupported_statements": [
+          "**"
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "准确提取了上下文中的核心原因",
+          "回答简洁明了，直接回应了用户查询",
+          "完全基于检索到的文档内容，无任何幻觉"
+        ],
+        "weaknesses": [],
+        "rationale": "回答完全根据检索到的文档内容（第1个chunk），准确指出了在润色、语法检查或降重前进行角色预设的原因（提升提问结果质量和语法准确性），信息准确、完整且高度相关。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 4229.89,
+        "answer_generation_ms": 2204.436,
+        "llm_judge_ms": 2675.989,
+        "total_ms": 9110.314
+      },
+      "token_usage": {
+        "prompt_tokens": 1030,
+        "completion_tokens": 50,
+        "total_tokens": 1080
+      },
+      "notes": []
+    },
+    {
+      "case_id": "reviewer-expert-output",
+      "query": "让模型扮演论文评审专家时，文档要求它怎样提出修改意见？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-2",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.194865,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-33",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.180367,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-3",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.144891,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.121653,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.11987,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据提供的文档，当让模型扮演论文评审专家（或特定研究领域的专家）提出修改意见时，具体要求如下：\n\n1. **不要全文修改**。\n2. **一一指出需要修改的地方**。\n3. **给出修改意见以及推荐的修改内容**。",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.75,
+        "query_term_coverage": 0.68,
+        "groundedness_score": 0.619261,
+        "grounded_sentence_ratio": 1.0,
+        "reference_similarity": 0.339623,
+        "unsupported_statement_count": 0,
+        "evaluated_sentence_count": 4,
+        "overall_answer_score": 0.69313,
+        "unsupported_statements": []
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "完全依据检索到的文档内容进行回答",
+          "条理清晰，分点列出要求",
+          "准确捕捉了核心指令（不全文修改、一一指出、给出意见及推荐内容）"
+        ],
+        "weaknesses": [],
+        "rationale": "回答直接对应了查询，且内容完全被检索到的上下文（chunk 2及chunk 3）所支持，准确无误地总结了文档中关于扮演专家提出修改意见的具体要求。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 5926.467,
+        "answer_generation_ms": 1363.004,
+        "llm_judge_ms": 1987.027,
+        "total_ms": 9276.498
+      },
+      "token_usage": {
+        "prompt_tokens": 1101,
+        "completion_tokens": 61,
+        "total_tokens": 1162
+      },
+      "notes": []
+    },
+    {
+      "case_id": "paper-title-requirements",
+      "query": "根据文档，依据摘要和关键词生成论文标题时，标题应满足哪些要求？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-6",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.21767,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.157553,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-75",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.153865,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.135098,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-74",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.133826,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据给定文档，依据摘要和关键词生成论文标题时，标题应满足以下要求：\n\n1. **简洁、明确和有信息量**：标题应当直接传达核心内容。\n2. **避免使用废话**：应避免使用诸如“研究”（study of）、“调查”（investigation of）、“发展”（development of）或“观察”（observations on）等浪费字眼的词语。\n3. **抓住受众**：确保标题能够立即抓住听众的心。\n4. **语言匹配**：需要检测摘要和关键词的语言，并使用相同的语言来提供标题。",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.75,
+        "query_term_coverage": 0.777778,
+        "groundedness_score": 0.498827,
+        "grounded_sentence_ratio": 1.0,
+        "reference_similarity": 0.21519,
+        "unsupported_statement_count": 0,
+        "evaluated_sentence_count": 5,
+        "overall_answer_score": 0.636269,
+        "unsupported_statements": []
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "完全依据检索到的文档内容进行回答",
+          "条理清晰，分点列出各项要求",
+          "准确涵盖了简洁、避免废话、抓受众和语言匹配等核心要求"
+        ],
+        "weaknesses": [],
+        "rationale": "回答完全根据提供的文档片段（rank 1）提取了生成论文标题时的要求，所有要点均在文档中有直接支撑，且没有虚构或矛盾之处，逻辑清晰，完全正确。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1850.513,
+        "answer_generation_ms": 1235.236,
+        "llm_judge_ms": 1686.089,
+        "total_ms": 4771.838
+      },
+      "token_usage": {
+        "prompt_tokens": 1205,
+        "completion_tokens": 130,
+        "total_tokens": 1335
+      },
+      "notes": []
+    },
+    {
+      "case_id": "english-title-output-format",
+      "query": "文档中的英文标题生成指令要求提供多少个标题，输出格式是什么？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.183947,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-8",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.172446,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.15888,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-66",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.134474,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-62",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.11598,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据给定上下文，英文标题生成指令要求为研究论文提供 **5 个**好的英文标题。输出格式为 **Markdown 表格**，表格包含**两列**（第一列给出英文标题，第二列用中文提供解释，且标题用中文）。",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.75,
+        "query_term_coverage": 0.518519,
+        "groundedness_score": 0.611468,
+        "grounded_sentence_ratio": 1.0,
+        "reference_similarity": 0.306122,
+        "unsupported_statement_count": 0,
+        "evaluated_sentence_count": 2,
+        "overall_answer_score": 0.670125,
+        "unsupported_statements": []
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "完全依据检索到的文档内容，准确回答了标题数量和输出格式要求",
+          "回答逻辑清晰，要点完整，包含了数量、表格形式及列的内容说明",
+          "格式规范，提取了关键信息并进行了结构化呈现"
+        ],
+        "weaknesses": [],
+        "rationale": "回答完全符合上下文内容，准确指出了需要5个标题、Markdown表格、两列以及对应的中英文内容要求，没有出现幻觉或矛盾。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1666.387,
+        "answer_generation_ms": 911.857,
+        "llm_judge_ms": 1344.812,
+        "total_ms": 3923.056
+      },
+      "token_usage": {
+        "prompt_tokens": 1324,
+        "completion_tokens": 55,
+        "total_tokens": 1379
+      },
+      "notes": []
+    },
+    {
+      "case_id": "abstract-components",
+      "query": "文档建议研究论文摘要概括哪些核心内容？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.257059,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-82",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.227598,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-83",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.197406,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-60",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.187018,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-62",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.176419,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据给定上下文，研究论文摘要需要概括的核心内容包括：\n1. 研究的主要发现\n2. 方法\n3. 结果\n4. 及其意义",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.75,
+        "query_term_coverage": 0.555556,
+        "groundedness_score": 0.688247,
+        "grounded_sentence_ratio": 1.0,
+        "reference_similarity": 0.285714,
+        "unsupported_statement_count": 0,
+        "evaluated_sentence_count": 5,
+        "overall_answer_score": 0.706338,
+        "unsupported_statements": []
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "完全依据检索到的上下文进行回答",
+          "准确提取了摘要需要概括的核心要素",
+          "结构清晰，要点明确"
+        ],
+        "weaknesses": [],
+        "rationale": "回答完全符合检索到的上下文内容（如chunk 64和chunk 82中提到的摘要应概括主要发现、方法、结果及其意义），没有遗漏或错误，结构分明。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1947.787,
+        "answer_generation_ms": 906.35,
+        "llm_judge_ms": 1426.817,
+        "total_ms": 4280.954
+      },
+      "token_usage": {
+        "prompt_tokens": 1127,
+        "completion_tokens": 35,
+        "total_tokens": 1162
+      },
+      "notes": []
+    },
+    {
+      "case_id": "english-abstract-structure",
+      "query": "文档中的英文摘要指令规定了怎样的内容顺序？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-9",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.145086,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-8",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.132917,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.132329,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-11",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.12901,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.11677,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 2265.122,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 2265.122
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102365073420892860636810)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "paper-outline-sections",
+      "query": "研究论文大纲指令建议包含哪些主要部分？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-14",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.25464,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.211329,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-71",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.210734,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-13",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.200742,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-8",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.193423,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 2849.61,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 2849.61
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102365564827632116957005)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "english-polishing-goals",
+      "query": "英文润色指令主要改进哪些方面，并要求怎样说明修改？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-21",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.154694,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-16",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.139385,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.137948,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-20",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.134267,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-17",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.132764,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 1936.875,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 1936.875
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102365965439149370162181)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "chinese-polishing-output",
+      "query": "中文润色指令对输出内容有什么特别限制？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.159389,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-17",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.15697,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-18",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.141059,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-16",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.138998,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-21",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.131632,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据现有资料，中文润色指令（第3个指令）对输出内容有以下特别限制：\n\n助手只需提供修改后的文本版本，而**无需包含任何解释或额外的说明**（或避免包括解释，只提供文本的更正版本）。",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.0,
+        "query_term_coverage": 0.722222,
+        "groundedness_score": 0.38701,
+        "grounded_sentence_ratio": 0.5,
+        "reference_similarity": 0.191304,
+        "unsupported_statement_count": 1,
+        "evaluated_sentence_count": 2,
+        "overall_answer_score": 0.365507,
+        "unsupported_statements": [
+          "根据现有资料，中文润色指令（第3个指令）对输出内容有以下特别限制："
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "直接准确地回答了关于输出内容限制的问题",
+          "严格依据检索到的文本内容进行总结",
+          "表达清晰，逻辑连贯"
+        ],
+        "weaknesses": [],
+        "rationale": "回答完全根据检索到的上下文，指出了中文润色指令要求只提供修改后的文本版本，而无需包含任何解释或额外说明，与上下文完美契合，评分全满。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1740.243,
+        "answer_generation_ms": 1126.761,
+        "llm_judge_ms": 1798.037,
+        "total_ms": 4665.041
+      },
+      "token_usage": {
+        "prompt_tokens": 1124,
+        "completion_tokens": 55,
+        "total_tokens": 1179
+      },
+      "notes": []
+    },
+    {
+      "case_id": "sci-polishing-table",
+      "query": "SCI论文润色指令要求 Markdown 表格包含哪三类信息？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-17",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.199897,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-16",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.184588,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-15",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.178488,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-21",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.168987,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.168563,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据现有资料，上下文中主要提到了在 Markdown 表格中列出修改及原因（例如包含完整的原始句子、突出显示修订部分、解释更改原因等，见文档[4]），但**并未**完整提及专门针对“SCI论文润色指令”要求 Markdown 表格必须包含的“哪三类信息”（文档中提到的是关于术语表生成包含三列：术语、定义、和论文中的标题索引，见文档[5]）。\n\n因此，根据现有资料无法确定。",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.25,
+        "query_term_coverage": 0.736842,
+        "groundedness_score": 0.18785,
+        "grounded_sentence_ratio": 0.0,
+        "reference_similarity": 0.190476,
+        "unsupported_statement_count": 2,
+        "evaluated_sentence_count": 2,
+        "overall_answer_score": 0.214764,
+        "unsupported_statements": [
+          "根据现有资料，上下文中主要提到了在 Markdown 表格中列出修改及原因（例如包含完整的原始句子、突出显示修订部分、解释更改原因等，见文档[4]），但**并未**完整提及专门针对“SCI论文润色指令”要求 Markdown 表格必须包含的“哪三类信息”（文档中提到的是关于术语表生成包含三列：术语、定义、和论文中的标题索引，见文档[5]）",
+          "因此，根据现有资料无法确定"
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 0.4,
+        "groundedness_score": 0.8,
+        "relevance_score": 0.6,
+        "completeness_score": 0.2,
+        "factual_consistency_score": 0.6,
+        "strengths": [
+          "正确识别了文档中关于Markdown表格包含三类内容的片段（虽然部分张冠李戴）",
+          "态度谨慎，指出了资料的具体出处"
+        ],
+        "weaknesses": [
+          "未能正确从上下文中提取出SCI论文润色指令中Markdown表格的三类信息（文档4中已明确指出：完整的原始句子、突出显示修订部分、解释更改原因）",
+          "错误地引用了术语表生成的列信息（术语、定义、标题索引），导致回答不准确",
+          "给出了“无法确定”的错误结论"
+        ],
+        "rationale": "检索到的文档（chunk 4）中明确提到了润色指令中 Markdown 表格的每一列包含的三类内容：“完整的原始句子；突出显示句子的修订部分；解释为什么做出这些更改”。然而，模型却认为资料中没有提到，并误引了另一个术语表生成的列信息，导致回答不准确且不完整。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1865.552,
+        "answer_generation_ms": 1261.664,
+        "llm_judge_ms": 1878.109,
+        "total_ms": 5005.325
+      },
+      "token_usage": {
+        "prompt_tokens": 1099,
+        "completion_tokens": 109,
+        "total_tokens": 1208
+      },
+      "notes": []
+    },
+    {
+      "case_id": "grammar-check-boundary",
+      "query": "纯语法和拼写检查指令与普通润色有什么区别？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-28",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.164683,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-0",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.128297,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-17",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.125551,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-15",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.115285,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-18",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.111018,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据现有资料，纯语法和拼写检查指令与普通润色（如SCI论文润色或英文润色）的区别在于：\n\n1. **纯语法和拼写检查指令**：要求助手确保语法和拼写正确无误，**不要尝试润色文本**。如果没有发现错误，则告知这段话很好；如果发现了语法或拼写错误，需在一个双列的 Markdown 表格中列出（第一列放原始文本，第二列放更正后的文本，并突出显示修正的关键词）。\n2. **普通润色指令**：要求重写写作以符合学术风格，提高拼写、语法、清晰度、简洁性和整体可读性（如有必要可重写整个句子），并且需要在 Markdown 表格中列出所有修改并**解释修改的原因**（或者某些中文润色指令要求只提供修改后的文本版本，而不包含解释）。",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.5,
+        "query_term_coverage": 0.75,
+        "groundedness_score": 0.572883,
+        "grounded_sentence_ratio": 0.8,
+        "reference_similarity": 0.141079,
+        "unsupported_statement_count": 1,
+        "evaluated_sentence_count": 5,
+        "overall_answer_score": 0.581905,
+        "unsupported_statements": [
+          "根据现有资料，纯语法和拼写检查指令与普通润色（如SCI论文润色或英文润色）的区别在于："
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "完全依据检索到的上下文内容进行回答",
+          "清晰对比了纯语法检查指令与普通润色指令的区别",
+          "要点涵盖全面，包括输出格式、是否重写及解释要求"
+        ],
+        "weaknesses": [],
+        "rationale": "回答准确提取了上下文中的关键信息，将纯语法和拼写检查指令与普通（英文/中文/SCI）润色指令的要求进行了准确且详尽的对比，各项评分均达到满分。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1654.767,
+        "answer_generation_ms": 1336.483,
+        "llm_judge_ms": 1386.41,
+        "total_ms": 4377.66
+      },
+      "token_usage": {
+        "prompt_tokens": 1004,
+        "completion_tokens": 190,
+        "total_tokens": 1194
+      },
+      "notes": []
+    },
+    {
+      "case_id": "background-principle-memory",
+      "query": "文档如何利用预先说明的基本原理辅助后续论文润色？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-34",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.126951,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-17",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.113877,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-35",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.113875,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-15",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.10297,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-18",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.099228,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据现有资料，利用预先说明的基本原理辅助后续论文润色的方法是：\n\n在对话时主动告诉 DeepSeek 相关的背景知识或原理（例如使用指令：`Now, in order to help me better polish my thesis, I need you to remember the XXX principle: \".......\"` / `现在，为了接下来能够帮我更好的润色论文，我需要你记住 XXX 原理：“.......”`）。\n\n这样就相当于为一段内容封装了一个函数名称。当后续再次提到该原理时，ChatDeepSeek 就能快速知道所指的是哪些基本事实，从而在润色和修改内容时，能够根据这些基本事实或原理来修正不符合事实或逻辑的部分。",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 1.0,
+        "query_term_coverage": 0.782609,
+        "groundedness_score": 0.514975,
+        "grounded_sentence_ratio": 0.5,
+        "reference_similarity": 0.167488,
+        "unsupported_statement_count": 2,
+        "evaluated_sentence_count": 4,
+        "overall_answer_score": 0.576748,
+        "unsupported_statements": [
+          "根据现有资料，利用预先说明的基本原理辅助后续论文润色的方法是：",
+          "当后续再次提到该原理时，ChatDeepSeek 就能快速知道所指的是哪些基本事实，从而在润色和修改内容时，能够根据这些基本事实或原理来修正不符合事实或逻辑的部分"
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "完全依据检索到的文档内容进行回答",
+          "准确还原了“封装基本事实/原理”的方法和具体指令",
+          "逻辑清晰，结构完整"
+        ],
+        "weaknesses": [],
+        "rationale": "回答完美契合查询意图，直接引用并总结了文档中关于利用预先说明的原理辅助论文润色的技巧，所有信息均有上下文支持，没有事实错误或幻觉。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1879.673,
+        "answer_generation_ms": 1305.821,
+        "llm_judge_ms": 1315.022,
+        "total_ms": 4500.516
+      },
+      "token_usage": {
+        "prompt_tokens": 947,
+        "completion_tokens": 147,
+        "total_tokens": 1094
+      },
+      "notes": []
+    },
+    {
+      "case_id": "personalized-polishing-dimensions",
+      "query": "个性化润色指令列出了哪些可选择的优化维度？请至少说明五项。",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-36",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.1567,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-16",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.121978,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.108144,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-31",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.10271,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-17",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.101868,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据给定资料，个性化润色指令列出了以下优化维度（至少说明五项）：\n\n1. **更精确的术语 (More precise)**：选择更精确的词汇，例如使用“generate”代替“produce”。\n2. **精炼表达 (More concise)**：去除冗余的表达以提高句子的清晰度和直接性。\n3. **客观的语言 (More objective)**：剔除含糊和主观性表述，以客观方式呈现信息。\n4. **细化描述 (More specific)**：提供更具体的细节，以支持论点或想法。\n5. **更连贯的表达 (More coherent)**：确保句子的组织性良好，逻辑流畅。\n6. **保持风格一致 (More consistent)**：确保用词和语调与整篇论文保持一致。\n7. **符合学术风格 (More academic)**：运用正确的学术用语如“moreover”和“consequently”。\n8. **规范语法 (More formal grammar)**：使用正确的语法或句法，避免语句不完整或偏离主题。\n9. **深化细节描绘 (More nuanced)**：使用精准的词汇和短语描述复杂或微妙的概念，使句子更加细化。\n\n（注：以上列出了资料中提到的全部9个维度，您可以从中任选五项以上。）",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.8,
+        "query_term_coverage": 0.666667,
+        "groundedness_score": 0.591544,
+        "grounded_sentence_ratio": 0.75,
+        "reference_similarity": 0.125874,
+        "unsupported_statement_count": 3,
+        "evaluated_sentence_count": 12,
+        "overall_answer_score": 0.615449,
+        "unsupported_statements": [
+          "根据给定资料，个性化润色指令列出了以下优化维度（至少说明五项）：",
+          "（注：以上列出了资料中提到的全部9个维度，您可以从中任选五项以上",
+          "）"
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "全面列出了资料中提供的全部9个优化维度，超额满足了“至少说明五项”的要求",
+          "回答结构清晰，层次分明",
+          "完全依据检索到的上下文进行回答，无任何幻觉"
+        ],
+        "weaknesses": [],
+        "rationale": "该回答完美匹配了用户的查询意图。它直接从检索到的上下文中提取了个性化润色指令的所有优化维度，不仅满足了至少说明五项的要求，而且将全部9个维度都进行了准确列举和简要说明，内容完全基于上下文且事实一致。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1360.404,
+        "answer_generation_ms": 1508.115,
+        "llm_judge_ms": 1616.421,
+        "total_ms": 4484.94
+      },
+      "token_usage": {
+        "prompt_tokens": 1178,
+        "completion_tokens": 289,
+        "total_tokens": 1467
+      },
+      "notes": []
+    },
+    {
+      "case_id": "academic-translation-style",
+      "query": "第一条论文翻译指令对英文译文的风格和原意提出了什么要求？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.164924,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.15947,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-70",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.1469,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-21",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.146682,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-38",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.137431,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 1673.512,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 1673.512
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102372646093545583334032)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "translation-markdown-columns",
+      "query": "要求提供两个翻译版本的中英翻译指令使用怎样的表格结构？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-38",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.15416,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-40",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.127448,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-36",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.123512,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-16",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.122458,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-42",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.118144,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 1718.82,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 1718.82
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102373029237271934064639)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "plagiarism-reduction-methods",
+      "query": "文档建议用哪些方法降低论文内容重复率？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-62",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.176124,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-50",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.168506,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.16244,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-12",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.158955,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-66",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.149448,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 3689.563,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 3689.563
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102373595528640512888810)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "comprehensive-rewrite-originality",
+      "query": "综合改写指令怎样兼顾原创性与学术规范？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-53",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.190261,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-51",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.168683,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-71",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.135218,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-52",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.131341,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-4",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.121805,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 1426.304,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 1426.304
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102373934859544778066150)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "reference-format-review",
+      "query": "参考文献格式检查指令要求如何利用五个模板，并以什么格式输出？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-57",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.184628,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-58",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.165883,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-56",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.162324,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-54",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.150184,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.144362,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 2835.059,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 2835.059
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102374412122555952855838)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "apa-reference-output",
+      "query": "按照 APA 格式校正参考文献时，文档特别强调了哪些输出要求？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-57",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.182912,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-58",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.166445,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-56",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.087196,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-54",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.07839,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.068871,
+          "retrieval_channels": [
+            "dense"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 1462.48,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 1462.48
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102374769081598716961106)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "cover-letter-content",
+      "query": "投稿 Nature 的 Cover Letter 指令要求提供和声明哪些内容？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-58",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.219149,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-59",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.199237,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.182951,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-62",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.167061,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.145636,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 1687.84,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 1687.84
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102375149310781650055357)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "reviewer-feedback-plan",
+      "query": "文档建议怎样处理审稿人的反馈？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-60",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.249465,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-59",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.133336,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-23",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.111173,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-58",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.083301,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-4",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.078243,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 2077.926,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 2077.926
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102375554750982265382370)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "paper-core-points-nine-questions",
+      "query": "快速归纳单篇文献核心要点时，文档建议关注哪些问题？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-60",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.180242,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-61",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.165524,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.134561,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-62",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.130779,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.121221,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 2029.075,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 2029.075
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102375966912597962282413)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "deep-reading-output-format",
+      "query": "深入阅读论文的指令对篇幅和最终排版提出了哪些要求？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.268132,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.175404,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-62",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.123796,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-82",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.121844,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-71",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.120495,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据给定上下文，关于“深入阅读某篇论文”的指令，对篇幅和内容的要求如下：\n\n1. **篇幅要求**：首先请用 **1000-1500 字左右**的篇幅，对论文进行深入解读。\n2. **解读细节与排版要求**：\n   - 在讲述过程中，需多引用论文中的细节内容、关键数据和实验结果。\n   - 对技术概念相对新颖、非专业读者可能不太了解的部分，需给出通俗的解释。\n   - 需从以下几个方面进行详细解读：\n     1. 论文的研究目标是什么？想要解决什么实际问题？该问题对产业发展有什么重要意义？\n     2. 论文提出了哪些新的思路、方法或模型？跟之前的方法相比有什么特点和优势？（需尽可能参考论文中的细节进行分析）\n     3. 论文通过什么实验来验证所提出方法的有效性？实验是如何设计的？实验数据和结果如何？（需引用关键数据加以说明）",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.333333,
+        "query_term_coverage": 0.666667,
+        "groundedness_score": 0.720028,
+        "grounded_sentence_ratio": 0.9375,
+        "reference_similarity": 0.041379,
+        "unsupported_statement_count": 1,
+        "evaluated_sentence_count": 16,
+        "overall_answer_score": 0.632317,
+        "unsupported_statements": [
+          "2. **解读细节与排版要求**："
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 0.85,
+        "groundedness_score": 1.0,
+        "relevance_score": 0.9,
+        "completeness_score": 0.7,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "准确提取了原文中关于1000-1500字篇幅的具体要求。",
+          "完整复述了“深入阅读某篇论文”指令中关于内容维度的三个具体问题。",
+          "回答结构清晰，逻辑严密。"
+        ],
+        "weaknesses": [
+          "检索到的上下文中未明确提及排版格式的详细细节（如Markdown、加粗、三级标题等），导致排版部分未能根据上下文全面回答，但参考答案补充了这些信息。",
+          "未涉及排版规范的具体细节（如引用块、加粗等）。"
+        ],
+        "rationale": "该回答依据检索到的上下文，准确回答了“深入阅读论文”的篇幅要求（1000-1500字）以及内容维度的解读要求。虽然上下文中并未提及具体的排版格式要求（如Markdown排版、加粗、三级标题等），但回答很好地涵盖了上下文中明确给出的文本要求部分。整体 groundedness 和 factual consistency 很高。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1705.954,
+        "answer_generation_ms": 1330.661,
+        "llm_judge_ms": 2803.789,
+        "total_ms": 5840.404
+      },
+      "token_usage": {
+        "prompt_tokens": 1328,
+        "completion_tokens": 223,
+        "total_tokens": 1551
+      },
+      "notes": []
+    },
+    {
+      "case_id": "paper-glossary-columns",
+      "query": "文献术语表应包含哪三列，各自表达什么？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.136628,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-66",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.10973,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-62",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.066837,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-57",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.062901,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-42",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.049959,
+          "retrieval_channels": [
+            "dense"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据给定上下文，文献术语表（或生成术语表的指令要求）应包含以下三列，各自表达的内容为：\n\n1. **第一列：术语**\n   - 表达内容：作者提出的核心术语，或者对人工智能专业研究生而言可能不够理解的一些专业条目。\n\n2. **第二列：定义**\n   - 表达内容：符合论文原意，同时尽可能用平白的语言充分解释。\n\n3. **第三列：论文中的标题索引**\n   - 表达内容：该术语在论文中出现的段落位置所在的标题，以方便读者到原文中学习。",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 1.0,
+        "query_term_coverage": 0.588235,
+        "groundedness_score": 0.617127,
+        "grounded_sentence_ratio": 0.857143,
+        "reference_similarity": 0.184783,
+        "unsupported_statement_count": 1,
+        "evaluated_sentence_count": 7,
+        "overall_answer_score": 0.676437,
+        "unsupported_statements": [
+          "根据给定上下文，文献术语表（或生成术语表的指令要求）应包含以下三列，各自表达的内容为："
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "完全依据检索到的上下文进行回答",
+          "准确列出了文献术语表的三列及其各自的表达内容",
+          "条理清晰，排版易于阅读"
+        ],
+        "weaknesses": [],
+        "rationale": "回答完美契合了用户的问题，所有信息均准确来源于检索上下文的第一条（chunk 69），没有包含任何虚构或不一致的内容。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 7659.718,
+        "answer_generation_ms": 1706.136,
+        "llm_judge_ms": 1859.164,
+        "total_ms": 11225.018
+      },
+      "token_usage": {
+        "prompt_tokens": 1179,
+        "completion_tokens": 135,
+        "total_tokens": 1314
+      },
+      "notes": []
+    },
+    {
+      "case_id": "structured-paper-summary",
+      "query": "文档中的标准文献摘要模板包含哪些分析模块？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.187353,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-70",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.114904,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.114811,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-62",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.074104,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-60",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.070079,
+          "retrieval_channels": [
+            "dense"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据给定上下文，标准文献摘要模板包含以下分析模块：\n\n1. **基本信息**：关于论文的详细信息，如标题、作者、期刊、出版日期等。\n2. **概述**：\n   1）论文研究什么现象\n   2）该论文的研究目的\n   3）作者的主要观点\n3. **关键概念**：\n   1）研究的关键概念有什么，列出这些概念的中文和英文名称\n   2）这些关键概念的定义\n   3）这些关键概念的关系\n4. **理论基础**：\n   1）关于该论文要研究的现象，论文提到了什么相关理论\n   2）这些理论间有什么冲突\n   3）作者（注：上下文中断开于此，后续为冲突相关内容）",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.428571,
+        "query_term_coverage": 0.6,
+        "groundedness_score": 0.711563,
+        "grounded_sentence_ratio": 0.857143,
+        "reference_similarity": 0.185185,
+        "unsupported_statement_count": 2,
+        "evaluated_sentence_count": 14,
+        "overall_answer_score": 0.634436,
+        "unsupported_statements": [
+          "根据给定上下文，标准文献摘要模板包含以下分析模块：",
+          "3）作者（注：上下文中断开于此，后续为冲突相关内容）"
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 0.85,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 0.5,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "完全基于检索到的上下文内容进行提取",
+          "准确还原了上下文中列出的模块细节",
+          "回答结构清晰，层次分明"
+        ],
+        "weaknesses": [
+          "检索到的上下文信息不全（在第四点理论基础处截断），导致回答内容缺失",
+          "未能覆盖参考答案中提到的实验方法、结论等后续模块"
+        ],
+        "rationale": "回答内容完全忠实于提供的上下文，准确列出了上下文中出现的所有标准文献摘要模板模块。然而，由于检索到的上下文本身在第四点末尾断开，导致模板内容不完整，无法展示后续的模块（如实验方法、结论等）。这属于上下文截断造成的限制，但基于给定文本，回答已尽最大可能准确提取。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1833.119,
+        "answer_generation_ms": 1148.508,
+        "llm_judge_ms": 1714.742,
+        "total_ms": 4696.369
+      },
+      "token_usage": {
+        "prompt_tokens": 1268,
+        "completion_tokens": 166,
+        "total_tokens": 1434
+      },
+      "notes": []
+    },
+    {
+      "case_id": "compare-two-papers-dimensions",
+      "query": "比较两篇研究时，文档要求从哪六个方面分析？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-71",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.14001,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-72",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.126849,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.119059,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-69",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.065609,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-79",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.057197,
+          "retrieval_channels": [
+            "dense"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据给定上下文，在比较两篇研究时，需要从以下六个方面进行对比分析：\n\n1. 研究目的\n2. 理论框架\n3. 实验设计\n4. 主要发现\n5. 应用和意义\n6. 研究局限",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 1.0,
+        "query_term_coverage": 0.578947,
+        "groundedness_score": 0.746043,
+        "grounded_sentence_ratio": 0.857143,
+        "reference_similarity": 0.568182,
+        "unsupported_statement_count": 1,
+        "evaluated_sentence_count": 7,
+        "overall_answer_score": 0.771861,
+        "unsupported_statements": [
+          "根据给定上下文，在比较两篇研究时，需要从以下六个方面进行对比分析："
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 1.0,
+        "groundedness_score": 1.0,
+        "relevance_score": 1.0,
+        "completeness_score": 1.0,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "完全基于检索到的文档内容，准确找出了文献比较阅读的六个方面",
+          "回答结构清晰，分点列出，易于阅读",
+          "覆盖了所有的预期答案关键词"
+        ],
+        "weaknesses": [],
+        "rationale": "回答精确地从检索到的上下文（文献比较阅读指令部分）提取了对比分析的两篇研究的六个方面，内容完全一致，没有冗余或错误信息。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 2132.828,
+        "answer_generation_ms": 873.317,
+        "llm_judge_ms": 1325.885,
+        "total_ms": 4332.031
+      },
+      "token_usage": {
+        "prompt_tokens": 1252,
+        "completion_tokens": 55,
+        "total_tokens": 1307
+      },
+      "notes": []
+    },
+    {
+      "case_id": "journal-matching-output",
+      "query": "论文期刊匹配指令需要哪些输入，最终怎样排列结果？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-73",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.156563,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-0",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.127625,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-65",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.12753,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.125559,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-8",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.118762,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": "generated",
+      "answer": "根据给定上下文，论文期刊匹配指令需要的输入为：\n1. 科学手稿的标题（title）\n2. 摘要（abstract）\n3. 关键词（key words）\n\n关于最终结果的排列方式，上下文中没有提及该指令的结果如何排列，因此**根据现有资料无法确定**。",
+      "answer_metrics": {
+        "answer_present": true,
+        "expected_term_recall": 0.5,
+        "query_term_coverage": 0.590909,
+        "groundedness_score": 0.454917,
+        "grounded_sentence_ratio": 0.6,
+        "reference_similarity": 0.128,
+        "unsupported_statement_count": 2,
+        "evaluated_sentence_count": 5,
+        "overall_answer_score": 0.471603,
+        "unsupported_statements": [
+          "根据给定上下文，论文期刊匹配指令需要的输入为：",
+          "关于最终结果的排列方式，上下文中没有提及该指令的结果如何排列，因此**根据现有资料无法确定**"
+        ]
+      },
+      "llm_judge_metrics": {
+        "overall_score": 0.65,
+        "groundedness_score": 1.0,
+        "relevance_score": 0.7,
+        "completeness_score": 0.4,
+        "factual_consistency_score": 1.0,
+        "strengths": [
+          "准确提取了输入部分所需的内容（标题、摘要、关键词）",
+          "严格根据给定上下文回答，指出了上下文中未提及结果排列方式",
+          "语言清晰专业，逻辑严密"
+        ],
+        "weaknesses": [
+          "未能回答关于结果排列的问题（由于检索到的上下文内容被截断，丢失了后续排列规则的信息）",
+          "完整性较低，未能完整覆盖参考答案中关于输出期刊数量和排序规则的信息"
+        ],
+        "rationale": "回答完全基于检索到的上下文。上下文由于文本截断，只包含了输入部分（title, abstract, key words），并没有包含结果如何排列的内容。因此模型正确地指出了上下文中没有提及排列方式。虽然这导致未能回答完整（漏掉了参考答案中的排列信息），但这是由于检索到的文档内容不完整所致，模型在给定上下文的约束下表现是准确且诚实的。"
+      },
+      "latency_metrics": {
+        "retrieval_ms": 1999.924,
+        "answer_generation_ms": 915.312,
+        "llm_judge_ms": 1908.927,
+        "total_ms": 4824.163
+      },
+      "token_usage": {
+        "prompt_tokens": 1013,
+        "completion_tokens": 68,
+        "total_tokens": 1081
+      },
+      "notes": []
+    },
+    {
+      "case_id": "credible-data-sources",
+      "query": "寻找研究数据源时，文档要求怎样判断和说明数据源？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-80",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.109353,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.096447,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-79",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.05087,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-81",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.047508,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-62",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.043881,
+          "retrieval_channels": [
+            "dense"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 1578.049,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 1578.049
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102383413032955181961186)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "research-direction-search-output",
+      "query": "对指定主题搜索研究论文时，结果清单应包含哪些信息？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-82",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.209593,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-81",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.166738,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-13",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.152886,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-83",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.149371,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.141915,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 1646.9,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 1646.9
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102383878983179512632)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "research-question-quality",
+      "query": "文档认为一个好的研究问题应具备哪些特征？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-8",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.143527,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-83",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.131885,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-84",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.123963,
+          "retrieval_channels": [
+            "dense",
+            "keyword"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.122231,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-72",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.077301,
+          "retrieval_channels": [
+            "dense"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 3375.928,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 3375.928
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102384330058699515623054)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    },
+    {
+      "case_id": "research-method-selection",
+      "query": "为研究主题推荐方法时，文档要求同时考虑哪些内容？",
+      "collection_id": "6f67f242-f702-4025-bf34-75fe8291cee0",
+      "top_k": 5,
+      "relevant_chunk_ids": [],
+      "relevant_document_ids": [],
+      "expected_sources": [
+        "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-64",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.126525,
+          "retrieval_channels": [
+            "keyword"
+          ]
+        },
+        {
+          "rank": 2,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-83",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.099297,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 3,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-82",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.098799,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 4,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-84",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.09165,
+          "retrieval_channels": [
+            "dense"
+          ]
+        },
+        {
+          "rank": 5,
+          "document_id": "d737acb7-b510-4290-b6b3-94687841311b",
+          "chunk_id": "d737acb7-b510-4290-b6b3-94687841311b-85",
+          "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "source_path": "raw/d737acb7-b510-4290-b6b3-94687841311b_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+          "score": 0.084916,
+          "retrieval_channels": [
+            "dense"
+          ]
+        }
+      ],
+      "primary_label_level": "document",
+      "primary_metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "relevant_retrieved_count": 0,
+        "relevant_total_count": 0
+      },
+      "chunk_metrics": null,
+      "document_metrics": null,
+      "source_metrics": {
+        "source_match": 1.0,
+        "source_hit_rate": 1.0,
+        "matched_sources": [
+          "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf"
+        ],
+        "expected_source_count": 1
+      },
+      "answer_source": null,
+      "answer": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "retrieval_ms": 1881.092,
+        "answer_generation_ms": null,
+        "llm_judge_ms": null,
+        "total_ms": 1881.092
+      },
+      "token_usage": null,
+      "notes": [
+        "Automatic answer generation failed: Error code: 429 - {'error': {'message': 'Sorry, you have reached the limit of the free model quota. Please switch to a paid model to enjoy unlimited concurrency. https://console.aihubmix.com/topup (tid: 2026081102384720529304248626175)', 'type': 'Aihubmix_api_error'}}",
+        "LLM judge skipped because no answer was available."
+      ]
+    }
+  ]
+  }
+}

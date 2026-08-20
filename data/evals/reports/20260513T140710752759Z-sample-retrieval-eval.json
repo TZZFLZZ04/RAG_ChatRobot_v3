@@ -1,0 +1,394 @@
+{
+  "report_id": "20260513T140710752759Z-sample-retrieval-eval",
+  "report_filename": "20260513T140710752759Z-sample-retrieval-eval.json",
+  "dataset_path": "sample_retrieval_eval.json",
+  "created_at": "2026-05-13T14:07:10.752754+00:00",
+  "answer_mode": "off",
+  "llm_judge_mode": "off",
+  "report": {
+    "dataset_name": "sample-retrieval-eval",
+    "description": "Template dataset for retrieval and answer-focused RAG evaluation.",
+    "evaluated_at": "2026-05-13T14:07:10.752676+00:00",
+    "summary": {
+      "dataset_name": "sample-retrieval-eval",
+      "total_cases": 2,
+      "top_k": 10,
+      "primary_metrics": {
+        "case_count": 2,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "chunk_metrics": null,
+      "document_metrics": {
+        "case_count": 2,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "mrr_at_k": 0.0,
+        "average_precision_at_k": 0.0,
+        "ndcg_at_k": 0.0
+      },
+      "source_metrics": null,
+      "answer_metrics": null,
+      "llm_judge_metrics": null,
+      "latency_metrics": {
+        "case_count": 2,
+        "avg_retrieval_ms": 3190.309,
+        "p50_retrieval_ms": 999.524,
+        "p95_retrieval_ms": 5381.093,
+        "max_retrieval_ms": 5381.093,
+        "avg_answer_generation_ms": null,
+        "p50_answer_generation_ms": null,
+        "p95_answer_generation_ms": null,
+        "max_answer_generation_ms": null,
+        "avg_llm_judge_ms": null,
+        "p50_llm_judge_ms": null,
+        "p95_llm_judge_ms": null,
+        "max_llm_judge_ms": null,
+        "avg_total_ms": 3190.309,
+        "p50_total_ms": 999.524,
+        "p95_total_ms": 5381.093,
+        "max_total_ms": 5381.093
+      },
+      "token_usage": null
+    },
+    "case_results": [
+      {
+        "case_id": "academic-role-booking",
+        "query": "学术角色怎么预订？",
+        "collection_id": "74e59242-9371-4a64-901a-6c6f0b304d75",
+        "top_k": 10,
+        "relevant_chunk_ids": [],
+        "relevant_document_ids": [
+          "74e59242-9371-4a64-901a-6c6f0b304d75"
+        ],
+        "expected_sources": [],
+        "retrieved": [
+          {
+            "rank": 1,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-0",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.235838,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-4",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.209241,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-1",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.161802,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-69",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.161125,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-8",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.113579,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 6,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-14",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.112758,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 7,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-80",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.112381,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 8,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-81",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.112186,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 9,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-20",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.11173,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 10,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-15",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.107949,
+            "retrieval_channels": [
+              "keyword"
+            ]
+          }
+        ],
+        "primary_label_level": "document",
+        "primary_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": null,
+        "document_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "source_metrics": null,
+        "answer_source": null,
+        "answer": null,
+        "answer_metrics": null,
+        "llm_judge_metrics": null,
+        "latency_metrics": {
+          "retrieval_ms": 5381.093,
+          "answer_generation_ms": null,
+          "llm_judge_ms": null,
+          "total_ms": 5381.093
+        },
+        "token_usage": null,
+        "notes": []
+      },
+      {
+        "case_id": "academic-polishing-instructions",
+        "query": "学术润色指令有哪些",
+        "collection_id": "74e59242-9371-4a64-901a-6c6f0b304d75",
+        "top_k": 10,
+        "relevant_chunk_ids": [],
+        "relevant_document_ids": [
+          "74e59242-9371-4a64-901a-6c6f0b304d75"
+        ],
+        "expected_sources": [],
+        "retrieved": [
+          {
+            "rank": 1,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-14",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.307216,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-4",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.302094,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-36",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.251491,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-65",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.231944,
+            "retrieval_channels": [
+              "keyword"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-12",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.225266,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 6,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-17",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.216814,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 7,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-0",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.216779,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 8,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-66",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.215988,
+            "retrieval_channels": [
+              "keyword"
+            ]
+          },
+          {
+            "rank": 9,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-34",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.198917,
+            "retrieval_channels": [
+              "dense",
+              "keyword"
+            ]
+          },
+          {
+            "rank": 10,
+            "document_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823",
+            "chunk_id": "945eac88-dd7c-4ad1-91c3-4563e8f4f823-64",
+            "source_name": "50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "source_path": "raw/945eac88-dd7c-4ad1-91c3-4563e8f4f823_50个顶级的DeepSeek学术论文指令，强烈建议收藏！.pdf",
+            "score": 0.194826,
+            "retrieval_channels": [
+              "keyword"
+            ]
+          }
+        ],
+        "primary_label_level": "document",
+        "primary_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "chunk_metrics": null,
+        "document_metrics": {
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "hit_rate_at_k": 0.0,
+          "mrr_at_k": 0.0,
+          "average_precision_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "relevant_retrieved_count": 0,
+          "relevant_total_count": 1
+        },
+        "source_metrics": null,
+        "answer_source": null,
+        "answer": null,
+        "answer_metrics": null,
+        "llm_judge_metrics": null,
+        "latency_metrics": {
+          "retrieval_ms": 999.524,
+          "answer_generation_ms": null,
+          "llm_judge_ms": null,
+          "total_ms": 999.524
+        },
+        "token_usage": null,
+        "notes": []
+      }
+    ]
+  }
+}
